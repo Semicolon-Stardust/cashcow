@@ -9,9 +9,9 @@ function Navbar() {
   }, [isdark]);
   return (
     <div>
-      <div className="navbar bg-base-100">
+      <div className="navbar bg-base-100 z-[100] top-0 left-0 fixed">
         <div className="flex-1">
-          <a className="btn btn-ghost text-xl">CashCow</a>
+          <a className="btn btn-ghost font-tiltWrap text-bold text-2xl">CashCow</a>
         </div>
         <div className="flex-none">
           <div className="navbar-end flex gap-3 justify-center items-center">
