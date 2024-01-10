@@ -10,7 +10,7 @@ function Navbar() {
 
   return (
     <div>
-      <div className="navbar bg-base-100 z-[100] top-0 left-0 px-6 fixed">
+      <div className="navbar bg-base-100 z-[100] top-0 left-0 px-6 fixed border-b-4 border-info">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -37,10 +37,13 @@ function Navbar() {
                 <a>Home</a>
               </li>
               <li>
-                <a>About Us</a>
+                <a>Features</a>
               </li>
               <li>
-                <a>Contact Us</a>
+                <a>Pricing</a>
+              </li>
+              <li>
+                <a>Financial Literacy</a>
               </li>
             </ul>
           </div>
@@ -54,23 +57,26 @@ function Navbar() {
               <a>Home</a>
             </li>
             <li>
-              <a>About Us</a>
+              <a>Features</a>
             </li>
             <li>
-              <a>Contact Us</a>
+              <a>Pricing</a>
+            </li>
+            <li>
+              <a>Financial Literacy</a>
             </li>
           </ul>
         </div>
         <div className="navbar-end flex gap-3 items-center">
           <a className="btn btn-ghost ">Register</a>
-          <a className="btn btn-outline btn-secondary">Login</a>
+          <a className="btn btn-outline">Login</a>
           <div>
             <label className="swap swap-rotate">
               {/* this hidden checkbox controls the state */}
               <input
                 type="checkbox"
                 className="theme-controller"
-                value="dark"
+                value="black"
                 checked={isdark}
                 onChange={() => setIsdark(!isdark)}
               />
