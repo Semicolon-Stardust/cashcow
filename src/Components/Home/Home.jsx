@@ -8,23 +8,23 @@ import FAQs from './FAQs'
 function Home() {
   return (
     <div>
-        <div>
+        <div className='my-12'>
             <Hero/>
         </div>
 
-        <div>
+        <div className='my-12'>
             <Features/>
         </div>
 
-        <div>
+        <div className='my-12'>
             <HowItWorks/>
         </div>
 
-        <div>
+        <div className='my-12'>
             <Pricing/>
         </div>
 
-        <div>
+        <div className='my-12'>
             <FAQs/>
         </div>
 

@@ -2,9 +2,12 @@ import React from "react";
 
 function HowItWorks() {
   return (
-    <div className="my-9 h-screen flex flex-col items-center justify-center gap-[5rem]">
-      <div>
-        <h1 className="text-4xl font-bold">How It Works?</h1>
+    <div className="min-h-screen py-9 flex flex-col items-center justify-center gap-[5rem]">
+      <div className="flex flex-col gap-5">
+        <h1 className="text-center text-4xl font-bold">How It Works?</h1>
+        <p className="text-center">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
+        </p>
       </div>
       <div>
         <div className="mx-10 grid lg:grid-cols-3 lg:gap-y-12 lg:gap-x-12">

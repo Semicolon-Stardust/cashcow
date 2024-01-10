@@ -1,8 +1,9 @@
 import React from "react";
+import GreenTick from "../Utilities/GreenTick";
 
 function Features() {
   return (
-    <div className="my-9 min-h-screen flex items-center justify-center flex-col gap-10">
+    <div className="min-h-screen flex items-center justify-center flex-col gap-10">
       <div className="text-center max-w-[30rem]">
         <h1 className="mb-6 text-4xl text-center font-bold">Features</h1>
         <p className="mb-16 text-neutral-500">
@@ -13,24 +14,9 @@ function Features() {
       </div>
 
       <div className="grid gap-x-6 md:grid-cols-2 lg:grid-cols-3 xl:gap-x-12">
-        <div className="mb-12">
+        <div className="">
           <div className="flex">
-            <div className="shrink-0">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="2"
-                stroke="currentColor"
-                className="mr-3 h-5 w-5 text-success"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-            </div>
+            <GreenTick />
             <div className="ml-2 grow">
               <p className="mb-1 font-bold">Support 24/7</p>
               <p className="text-neutral-500">
@@ -42,22 +28,7 @@ function Features() {
 
         <div className="mb-12">
           <div className="flex">
-            <div className="shrink-0">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="2"
-                stroke="currentColor"
-                className="mr-3 h-5 w-5 text-success"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-            </div>
+            <GreenTick />
             <div className="ml-2 grow">
               <p className="mb-1 font-bold">Tracking</p>
               <p className="text-neutral-500">
@@ -69,22 +40,7 @@ function Features() {
 
         <div className="mb-12">
           <div className="flex">
-            <div className="shrink-0">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="2"
-                stroke="currentColor"
-                className="mr-3 h-5 w-5 text-success"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-            </div>
+            <GreenTick />
             <div className="ml-2 grow">
               <p className="mb-1 font-bold">Reporting</p>
               <p className="text-neutral-500">
@@ -96,22 +52,7 @@ function Features() {
 
         <div className="mb-12">
           <div className="flex">
-            <div className="shrink-0">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="2"
-                stroke="currentColor"
-                className="mr-3 h-5 w-5 text-success"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-            </div>
+            <GreenTick />
             <div className="ml-2 grow">
               <p className="mb-1 font-bold">Analytics</p>
               <p className="text-neutral-500">
@@ -123,22 +64,7 @@ function Features() {
 
         <div className="mb-12">
           <div className="flex">
-            <div className="shrink-0">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="2"
-                stroke="currentColor"
-                className="mr-3 h-5 w-5 text-success"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-            </div>
+            <GreenTick />
             <div className="ml-2 grow">
               <p className="mb-1 font-bold">Huge community</p>
               <p className="text-neutral-500">
@@ -150,22 +76,7 @@ function Features() {
 
         <div className="mb-12">
           <div className="flex">
-            <div className="shrink-0">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="2"
-                stroke="currentColor"
-                className="mr-3 h-5 w-5 text-success"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-            </div>
+            <GreenTick />
             <div className="ml-2 grow">
               <p className="mb-1 font-bold">Easy to use</p>
               <p className="text-neutral-500">
@@ -177,22 +88,7 @@ function Features() {
 
         <div className="mb-12">
           <div className="flex">
-            <div className="shrink-0">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="2"
-                stroke="currentColor"
-                className="mr-3 h-5 w-5 text-success"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-            </div>
+            <GreenTick />
             <div className="ml-2 grow">
               <p className="mb-1 font-bold">Frequent updates</p>
               <p className="text-neutral-500">
@@ -204,22 +100,7 @@ function Features() {
 
         <div className="mb-12">
           <div className="flex">
-            <div className="shrink-0">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="2"
-                stroke="currentColor"
-                className="mr-3 h-5 w-5 text-success"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-            </div>
+            <GreenTick />
             <div className="ml-2 grow">
               <p className="mb-1 font-bold">Responsive</p>
               <p className="text-neutral-500">
@@ -231,22 +112,7 @@ function Features() {
 
         <div className="mb-12">
           <div className="flex">
-            <div className="shrink-0">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="2"
-                stroke="currentColor"
-                className="mr-3 h-5 w-5 text-success"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-            </div>
+            <GreenTick />
             <div className="ml-2 grow">
               <p className="mb-1 font-bold">Responsive</p>
               <p className="text-neutral-500">
