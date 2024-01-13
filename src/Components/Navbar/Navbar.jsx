@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link, NavLink } from "react-router-dom";
 
 function Navbar() {
   const [isdark, setIsdark] = useState(
@@ -34,22 +35,28 @@ function Navbar() {
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li>
-                <a>Home</a>
+                <a href="#hero">Home</a>
               </li>
               <li>
-                <a>Features</a>
+                <a href="#features">Features</a>
               </li>
               <li>
-                <a>Pricing</a>
+                <a href="#pricing">Pricing</a>
               </li>
               <li>
-                <a>Financial Literacy</a>
+                <Link to="FinancialLiteracy">Financial Literacy</Link>
+              </li>
+              <li>
+                <Link to="/register">Register</Link>
+              </li>
+              <li>
+                <Link to="/login">Login</Link>
               </li>
             </ul>
           </div>
-          <a className="btn btn-ghost font-tiltWrap font-[900] text-2xl">
+          <Link to="/" className="btn btn-ghost font-tiltWrap font-[900] text-2xl">
             CashCow
-          </a>
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
@@ -63,13 +70,13 @@ function Navbar() {
               <a>Pricing</a>
             </li>
             <li>
-              <a>Financial Literacy</a>
+              <Link to="FinancialLiteracy">Financial Literacy</Link>
             </li>
           </ul>
         </div>
         <div className="navbar-end flex gap-3 items-center">
-          <a className="btn btn-ghost ">Register</a>
-          <a className="btn btn-outline">Login</a>
+          <Link to="/register" className="btn btn-ghost sm:flex hidden">Register</Link>
+          <Link to="/login" className="btn btn-outline sm:flex hidden">Login</Link>
           <div>
             <label className="swap swap-rotate">
               {/* this hidden checkbox controls the state */}

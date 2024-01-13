@@ -14,7 +14,7 @@ function Hero() {
         <div className="hero-content text-center text-neutral-content">
           <div className="max-w-[50rem]">
             <h1 className="mb-5 sm:text-5xl text-2xl font-bold">Effortless Expense Tracking for a Smarter Financial Future.</h1>
-            <button className="btn btn-primary">Get Started</button>
+            <button className="btn btn-accent">Get Started</button>
           </div>
         </div>
       </div>
