@@ -3,9 +3,9 @@ import React from "react";
 function HowItWorks() {
   return (
     <div className="min-h-screen py-9 flex flex-col items-center justify-center gap-[5rem]">
-      <div className="flex flex-col gap-5">
-        <h1 className="text-center text-4xl font-bold">How It Works?</h1>
-        <p className="text-center">
+      <div className="flex flex-col gap-5 text-center">
+        <h1 className="text-4xl font-bold">How It Works?</h1>
+        <p className="">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
         </p>
       </div>
