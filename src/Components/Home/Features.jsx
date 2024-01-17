@@ -1,4 +1,4 @@
-import React from "react";
+
 import GreenTick from "../Utilities/GreenTick";
 
 function Features() {
