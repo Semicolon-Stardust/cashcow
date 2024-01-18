@@ -1,11 +1,10 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import Budgeting from './Budgeting'
 
 function FinLit() {
   return (
-    <div>
-        <h1>
-            Financial Literacy
-        </h1>
+    <div className='min-h-screen mx-[5rem] pt-[7rem]'>
+      <Budgeting/>
     </div>
   )
 }
