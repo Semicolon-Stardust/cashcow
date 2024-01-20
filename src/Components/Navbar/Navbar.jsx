@@ -44,7 +44,7 @@ function Navbar() {
                 <a href="#pricing">Pricing</a>
               </li>
               <li>
-                <Link to="FinancialLiteracy">Financial Literacy</Link>
+                <Link to="FinancialLiteracy/budgeting">Financial Literacy</Link>
               </li>
               <li>
                 <Link to="/register">Register</Link>

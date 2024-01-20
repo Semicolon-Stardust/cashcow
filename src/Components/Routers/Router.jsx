@@ -14,9 +14,9 @@ function Router() {
 
         <Routes>
             <Route path="/" element={<Home/>} />
-            <Route path="/financialLiteracy" element={<FinLit />}/>
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/financialLiteracy/:pageID" element={<FinLit />}/>
         </Routes>
 
         <Footer />
