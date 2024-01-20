@@ -1,5 +1,5 @@
-
 import { Link } from "react-router-dom";
+import Input from "../Utilities/Input";
 
 function Login() {
   return (
@@ -12,30 +12,17 @@ function Login() {
       </div>
       <div className="flex justify-center items-center">
         <form className="sm:w-[30rem] lg:w-[50rem] flex flex-col gap-5">
-          <div className="">
-            <label>
-              <div className="label">
-                <span className="label-text">E-Mail</span>
-              </div>
-              <input
-                type="text"
-                placeholder="Type your E-Mail here"
-                className="input input-bordered input-info w-full"
-              />
-            </label>
-          </div>
-          <div className="">
-            <label>
-              <div className="label">
-                <span className="label-text">Password</span>
-              </div>
-              <input
-                type="password"
-                placeholder="Type your Password here"
-                className="input input-bordered input-info w-full"
-              />
-            </label>
-          </div>
+          <Input label="Name" type="text" placeholder="Enter your Name Here" />
+          <Input
+            label="Email"
+            type="text"
+            placeholder="Enter your Email Here"
+          />
+          <Input
+            label="Password"
+            type="password"
+            placeholder="Enter your Password Here"
+          />
 
           <div className="flex flex-col gap-5 justify-center items-center">
             <div className="flex justify-center items-center w-full">
@@ -51,10 +38,15 @@ function Login() {
 
             <button className="btn btn-info w-full">Login</button>
           </div>
-          <div className="divider">OR</div> 
-            <div className="flex justify-center items-center">
-                <p>New Here? To create a new account : <Link to="/register" className="link">click here</Link></p>
-            </div>
+          <div className="divider">OR</div>
+          <div className="flex justify-center items-center">
+            <p>
+              New Here? To create a new account :{" "}
+              <Link to="/register" className="link">
+                click here
+              </Link>
+            </p>
+          </div>
         </form>
       </div>
     </div>
