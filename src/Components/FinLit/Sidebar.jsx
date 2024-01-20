@@ -27,6 +27,9 @@ function Sidebar() {
                     <NavLink to="/FinancialLiteracy/Savings">
                         <h3>2. Savings</h3>
                     </NavLink>
+                    <NavLink to="/FinancialLiteracy/Quiz1">
+                        <h3>3. Quiz 1</h3>
+                    </NavLink>
                 </div>
             : null}
         </aside>

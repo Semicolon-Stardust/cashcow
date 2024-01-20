@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 const Budgeting = () => {
 	return (
 		<div className="min-h-screen mx-[5rem] pt-[7rem]">
-			<div id="budgeting" className="font-sans flex flex-col justify-center">
+			<div className="flex flex-col justify-center">
 				<h2 className="text-2xl font-bold mb-4">Budgeting:</h2>
 
 				<div className="mb-4">
