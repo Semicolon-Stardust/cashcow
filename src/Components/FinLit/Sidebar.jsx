@@ -20,12 +20,12 @@ function Sidebar() {
             </button>
             {sidebarWidth === 'w-[20vw]' ?
 
-                <div className='flex flex-col py-[1rem] px-[2rem] justify-center'>
+                <div className='flex flex-col text-lg py-[1rem] px-[2rem] justify-center'>
                     <NavLink to="/FinancialLiteracy/Budgeting">
-                        <h3 className='text-xl'>Budgeting</h3>
+                        <h3>1. Budgeting</h3>
                     </NavLink>
                     <NavLink to="/FinancialLiteracy/Savings">
-                        <h3 className='text-xl'>Savings</h3>
+                        <h3>2. Savings</h3>
                     </NavLink>
                 </div>
             : null}
