@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 
 import Sidebar from './Sidebar'
 import Budgeting from './Budgeting'
+import Savings from './Savings'
 import { useParams } from 'react-router-dom'
 
 function FinLit() {
@@ -17,7 +18,25 @@ function FinLit() {
 
 function Pages({pageID}) 
 {
-	if (pageID === 'budgeting') 
+	if (pageID === 'Budgeting') 
+	{
+		return (
+			<div>
+				<Budgeting/>
+			</div>
+		)
+	}
+
+	else if (pageID === 'Savings') 
+	{
+		return (
+			<div>
+				<Savings/>
+			</div>
+		)
+	}
+
+	else
 	{
 		return (
 			<div>
