@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+
+import Sidebar from './Sidebar'
+import Budgeting from './Budgeting'
 
 function FinLit() {
   return (
-    <div>
-        <h1>
-            Financial Literacy
-        </h1>
+    <div className='min-h-screen flex'>
+      <Sidebar/>
+      <Budgeting/>
     </div>
   )
 }
