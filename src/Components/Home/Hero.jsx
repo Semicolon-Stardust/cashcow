@@ -78,11 +78,11 @@ function Hero() {
   const pauseBanner = () => {
     setCurrent(current);
   };
-  
+
   // Play Button Logic
   const playBanner = () => {
     setCurrent(current + 1);
-  }
+  };
 
   return (
     // Components
@@ -101,10 +101,8 @@ function Hero() {
       </div>
 
       <div className="absolute bottom-0 left-0 sm:flex justify-between items-center w-full hidden pb-[3rem] p-[3rem]">
-
-
         {/* Left & Right Buttons */}
-        <div className="join flex justify-end items-center w-full">
+        <div className="join flex justify-between items-center w-full">
           <button className="join-item btn btn-info" onClick={previousSlide}>
             <svg
               className="w-6 h-6"
@@ -122,20 +120,21 @@ function Hero() {
             </svg>
           </button>
 
-
-          {
+          <div className="join">
+            {
             BannerDetails.map((banner) => (
               <input
             key={banner.id}
-            className={"join-item btn btn-square"}
+            className={"btn btn-ghost rounded-full"}
             type="radio"
             name="options"
-            aria-label={`${banner.id + 1}`}
+            aria-label={banner.id === current ? "●" : `○`}
             checked={banner.id === current}
             onClick={() => setCurrent(banner.id)}
           />
             ))
           }
+          </div>
 
           <button className="join-item btn btn-info" onClick={nextSlide}>
             <svg
