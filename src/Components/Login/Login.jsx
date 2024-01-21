@@ -1,11 +1,12 @@
 import React, { useState, useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Input from "../Utilities/Input";
 import { UserContext } from "../../context/UserContext";
 
-function Login() {
+function Login({baseUrl}) {
 
   const {user, setUser} = useContext(UserContext);
+  const navigate = useNavigate();
 
   const [input, setInput] = useState({
     username: "",
@@ -23,7 +24,7 @@ function Login() {
     e.preventDefault();
     
     try{
-      const data = await fetch("/api/v1/login", {
+      const data = await fetch(`${baseUrl}/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -32,17 +33,17 @@ function Login() {
       })
 
       const response = await data.json();
-      console.log(response)
-    //   if (response.success == true) {
-    //     setToastMessage(`${response.user.name} logged in successfully`);
-    //     if (user === null) {
-    //       setUser(response.user);
-    //     }
+      if (response.success == true) {
+        setToastMessage(`${response.user.name} logged in successfully`);
+        if (user === null) {
+          setUser(response.user);
+          navigate("/dashboard");
+        }
 
-    //   }
-    //   else {
-    //     setToastMessage(response.message);
-    //   }
+      }
+      else {
+        setToastMessage(response.message);
+      }
     }
     catch(err){
       // setToastMessage(err);

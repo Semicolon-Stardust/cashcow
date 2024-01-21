@@ -7,8 +7,6 @@ function Navbar() {
 
 	const {user} = useContext(UserContext);
 
-	console.log(user);
-
 	const [isdark, setIsdark] = useState(
 		JSON.parse(localStorage.getItem("isdark"))
 	);
@@ -75,13 +73,13 @@ function Navbar() {
 				<div className="navbar-center hidden lg:flex">
 					<ul className="menu menu-horizontal px-1">
 						<li>
-							<a>Home</a>
+							<Link to="/">Home</Link>
 						</li>
 						<li>
-							<a>Features</a>
+							<Link to="/features">Features</Link>
 						</li>
 						<li>
-							<a>Pricing</a>
+							<Link to="/pricing">Pricing</Link>
 						</li>
 						<li>
 							<Link to="FinancialLiteracy/Budgeting">Financial Literacy</Link>
@@ -89,8 +87,12 @@ function Navbar() {
 					</ul>
 				</div>
 				<div className="navbar-end flex gap-3 items-center">
+					{user !== null ? <Link to="/dashboard" className="btn btn-ghost sm:flex hidden">{user.name}</Link> : 
+					<>
 					<Link to="/register" className="btn btn-ghost sm:flex hidden">Register</Link>
 					<Link to="/login" className="btn btn-outline sm:flex hidden">Login</Link>
+					</>
+					}
 					<div>
 						<label className="swap swap-rotate">
 							{/* this hidden checkbox controls the state */}
