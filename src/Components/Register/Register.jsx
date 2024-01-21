@@ -23,6 +23,9 @@ function Register() {
             <Credentials />
           </form>
         </div>
+        <div className="my-12 flex justify-end items-center">
+          <button className="btn btn-primary">Register</button>
+        </div>
       </div>
     </div>
   );
