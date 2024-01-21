@@ -44,6 +44,9 @@ function Register() {
             <Credentials input={input} handleChange={handleChange} />
           </form>
         </div>
+        <div className="my-12 flex justify-end items-center">
+          <button className="btn btn-primary">Register</button>
+        </div>
       </div>
     </div>
   );
