@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import Input from "../Utilities/Input";
+import { UserContext } from "../../context/UserContext";
 
 function Login() {
+
+  const {user, setUser} = useContext(UserContext);
 
   const [input, setInput] = useState({
     username: "",
@@ -10,22 +13,41 @@ function Login() {
     password: ""
   });
 
+  const [toastMessage, setToastMessage] = useState("");
+
   const handleChange = (e) => {
     setInput({ ...input, [e.target.name]: e.target.value });
   }
   
   const submitHandler = async (e) => {
     e.preventDefault();
-    const data = await fetch("http://127.0.0.1:4000/api/v1/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(input)
-    })
+    
+    try{
+      const data = await fetch("/api/v1/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(input)
+      })
 
-    const response = await data.json();
-    console.log(response);
+      const response = await data.json();
+      console.log(response)
+    //   if (response.success == true) {
+    //     setToastMessage(`${response.user.name} logged in successfully`);
+    //     if (user === null) {
+    //       setUser(response.user);
+    //     }
+
+    //   }
+    //   else {
+    //     setToastMessage(response.message);
+    //   }
+    }
+    catch(err){
+      // setToastMessage(err);
+      console.log(err)
+    }
 
   }
 
@@ -38,6 +60,12 @@ function Login() {
         </p>
       </div>
       <div className="flex justify-center items-center">
+        { (toastMessage !== "") ?
+        <div className="flex w-[50%] m-auto">
+          <h2 className="text-[red] font-semibold text-[20px]">{toastMessage}</h2>
+          <button onClick={() => { setToastMessage(""); }}>remove</button>
+        </div>
+        : null}
         <form onSubmit={submitHandler} className="sm:w-[30rem] lg:w-[50rem] flex flex-col gap-5">
           <Input label="Name" type="text" placeholder="Enter your Name Here" name="username" value={input.username} handleChange={handleChange} />
           <Input

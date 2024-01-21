@@ -1,8 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { UserContext } from "../../context/UserContext";
 import { Link, NavLink } from "react-router-dom";
 import logo from '../../assets/logo.png'
 
 function Navbar() {
+
+	const {user} = useContext(UserContext);
+
+	console.log(user);
+
 	const [isdark, setIsdark] = useState(
 		JSON.parse(localStorage.getItem("isdark"))
 	);
@@ -47,12 +53,16 @@ function Navbar() {
 							<li>
 								<Link to="FinancialLiteracy/Budgeting">Financial Literacy</Link>
 							</li>
-							<li>
-								<Link to="/register">Register</Link>
-							</li>
-							<li>
-								<Link to="/login">Login</Link>
-							</li>
+							{user === null ? 
+							<>
+								<li>
+									<Link to="/register">Register</Link>
+								</li>
+								<li>
+									<Link to="/login">Login</Link>
+								</li>
+							</>
+							: null}
 						</ul>
 					</div>
 					<Link to="/" className="btn flex justify-center items-center btn-ghost font-tiltWrap font-[900] text-2xl">
