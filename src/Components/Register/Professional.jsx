@@ -1,6 +1,6 @@
 import Input from "../Utilities/Input";
 
-function Professional() {
+function Professional({input, handleChange}) {
   return (
     <div className="w-full">
       <div className="flex flex-col gap-5 text-center">
@@ -11,11 +11,17 @@ function Professional() {
           label="Ocupation"
           type="text"
           placeholder="Enter your Ocupation here"
+          name="ocupation"
+          value={input.ocupation}
+          handleChange={handleChange}
         />
         <Input
           label="Company"
           type="text"
           placeholder="Enter your Company here"
+          name="company"
+          value={input.company}
+          handleChange={handleChange}
         />
         {/* <Input label="PAN Card Number" type="text" placeholder="Enter your PAN Card Number"/> */}
 

@@ -1,6 +1,6 @@
 import Input from "../Utilities/Input";
 
-function Personal() {
+function Personal({input, handleChange}) {
   return (
     <div className="w-full">
       <div className="flex flex-col gap-5 text-center">
@@ -11,8 +11,11 @@ function Personal() {
           label="Full Name"
           type="text"
           placeholder="Enter your Full Name Here"
+          name="username"
+          value={input.username}
+          handleChange={handleChange}
         />
-        <Input label="Date of Birth" type="Date" placeholder="DD/MM/YYYY" />
+        <Input label="Date of Birth" type="Date" placeholder="DD/MM/YYYY" name="dob" value={input.dob} handleChange={handleChange} />
         {/* <Input label="" type="" placeholder="" /> */}
       </div>
     </div>
