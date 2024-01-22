@@ -1,7 +1,57 @@
-import { Link } from "react-router-dom";
+import React, { useState, useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import Input from "../Utilities/Input";
+import { UserContext } from "../../context/UserContext";
 
-function Login() {
+function Login({baseUrl}) {
+
+  const {user, setUser} = useContext(UserContext);
+  const navigate = useNavigate();
+
+  const [input, setInput] = useState({
+    username: "",
+    email: "",
+    password: ""
+  });
+
+  const [toastMessage, setToastMessage] = useState("");
+
+  const handleChange = (e) => {
+    setInput({ ...input, [e.target.name]: e.target.value });
+  }
+  
+  const submitHandler = async (e) => {
+    e.preventDefault();
+    
+    try{
+      const data = await fetch(`${baseUrl}/login`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(input)
+      })
+
+      const response = await data.json();
+      if (response.success == true) {
+        setToastMessage(`${response.user.name} logged in successfully`);
+        if (user === null) {
+          setUser(response.user);
+          navigate("/dashboard");
+        }
+
+      }
+      else {
+        setToastMessage(response.message);
+      }
+    }
+    catch(err){
+      // setToastMessage(err);
+      console.log(err)
+    }
+
+  }
+
   return (
     <div className="min-h-screen flex flex-col justify-center items-center gap-7">
       <div className="flex flex-col gap-5 text-center">
@@ -11,17 +61,29 @@ function Login() {
         </p>
       </div>
       <div className="flex justify-center items-center">
-        <form className="sm:w-[30rem] lg:w-[50rem] flex flex-col gap-5">
-          <Input label="Name" type="text" placeholder="Enter your Name Here" />
+        { (toastMessage !== "") ?
+        <div className="flex w-[50%] m-auto">
+          <h2 className="text-[red] font-semibold text-[20px]">{toastMessage}</h2>
+          <button onClick={() => { setToastMessage(""); }}>remove</button>
+        </div>
+        : null}
+        <form onSubmit={submitHandler} className="sm:w-[30rem] lg:w-[50rem] flex flex-col gap-5">
+          <Input label="Name" type="text" placeholder="Enter your Name Here" name="username" value={input.username} handleChange={handleChange} />
           <Input
             label="Email"
-            type="text"
+            type="email"
             placeholder="Enter your Email Here"
+            name="email"
+            value={input.email}
+            handleChange={handleChange}
           />
           <Input
             label="Password"
             type="password"
             placeholder="Enter your Password Here"
+            name="password"
+            value={input.password}
+            handleChange={handleChange}
           />
 
           <div className="flex flex-col gap-5 justify-center items-center">
