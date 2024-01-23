@@ -52,7 +52,7 @@ To run CashCow locally, follow these steps:
 2. Install dependencies:
 
    ```bash
-   npm i
+   npm install
    ```
 
 3. Configure the MongoDB connection in the server-side code.
@@ -63,14 +63,14 @@ To run CashCow locally, follow these steps:
    npm run dev
    ```
 
-5. Access the application at `http://localhost:3000` in your web browser.
+5. Access the application at `http://localhost:5173` in your web browser.
 
 ## Contributors
-
-- [Aryan Gulati]
-- [Muteen Nabi Kundangar]
-- [Neelanjan Mukherji]]
-- [Rishit Jain]
+### Team Name: Semicolon Stardust
+- Aryan Gulati - Team Leader
+- Muteen Nabi Kundangar
+- Neelanjan Mukherji
+- Rishit Jain
 
 ## Acknowledgments
 
