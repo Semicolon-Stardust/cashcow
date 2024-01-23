@@ -24,7 +24,7 @@ const Dashboard = () => {
         </span>
             <button onClick={ async () => {
                 const {data} = await axios.get('/me');
-                setMe(data.dob);
+                console.log(data)
             }}>get</button>
         </div> :
         null}
