@@ -1,18 +1,10 @@
 import React, {useState, useEffect, createContext} from "react";
+import axios from "axios";
 
 const UserContext = createContext();
 
 const UserProvider = ({children}) => {
     const [user, setUser] = useState(null);
-
-    // useEffect(() => {
-    //     if (!user) {
-            
-    //         fetch("/me").then(({data}) => {
-    //             console.log(data);
-    //         })
-    //     }   
-    // }, []);
     
     return (
         <UserContext.Provider value={{user, setUser}}>
