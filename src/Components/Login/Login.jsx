@@ -2,8 +2,9 @@ import React, { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Input from "../Utilities/Input";
 import { UserContext } from "../../context/UserContext";
+import axios from "axios";
 
-function Login({baseUrl}) {
+function Login() {
 
   const {user, setUser} = useContext(UserContext);
   const navigate = useNavigate();
@@ -24,30 +25,22 @@ function Login({baseUrl}) {
     e.preventDefault();
     
     try{
-      const data = await fetch(`${baseUrl}/login`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(input)
-      })
+      const {data} = await axios.post('/login', input);
 
-      const response = await data.json();
-      if (response.success == true) {
-        setToastMessage(`${response.user.name} logged in successfully`);
+      if (data.success == true) {
+        setToastMessage(`${data.user.name} logged in successfully`);
         if (user === null) {
-          setUser(response.user);
+          setUser(data.user);
           navigate("/dashboard");
         }
 
       }
       else {
-        setToastMessage(response.message);
+        setToastMessage(data.message);
       }
     }
     catch(err){
-      // setToastMessage(err);
-      console.log(err)
+      setToastMessage(err);
     }
 
   }
@@ -91,11 +84,11 @@ function Login({baseUrl}) {
               <div className="w-full">
                 <a className="link">Forgot Password?</a>
               </div>
-              <div className="divider divider-horizontal"></div>
+              {/* <div className="divider divider-horizontal"></div>
               <label className="cursor-pointer label w-full">
                 <span className="label-text">Remember Me</span>
                 <input type="checkbox" className="checkbox checkbox-info" />
-              </label>
+              </label> */}
             </div>
 
             <button className="btn btn-info w-full">Login</button>

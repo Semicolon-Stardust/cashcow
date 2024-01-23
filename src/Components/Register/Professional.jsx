@@ -16,11 +16,11 @@ function Professional({input, handleChange}) {
           handleChange={handleChange}
         />
         <Input
-          label="Company"
+          label="Primary Currency"
           type="text"
-          placeholder="Enter your Company here"
-          name="company"
-          value={input.company}
+          placeholder="Enter your Primary Currency here"
+          name="primaryCurrency"
+          value={input.primaryCurrency}
           handleChange={handleChange}
         />
         {/* <Input label="PAN Card Number" type="text" placeholder="Enter your PAN Card Number"/> */}

@@ -1,4 +1,4 @@
-import React, {useContext} from 'react'
+import React, {useEffect, useContext} from 'react'
 import Navbar from '../Navbar/Navbar'
 import Home from '../Home/Home'
 import FinLit from '../FinLit/FinLit'
@@ -8,10 +8,30 @@ import Login from '../Login/Login'
 import Register from '../Register/Register'
 import Dashboard from '../Dashboard/Dashboard'
 import { UserContext } from '../../context/UserContext'
+import axios from 'axios';
 
-function Router({baseUrl}) {
+function Router() {
 
-  const {user} = useContext(UserContext);
+  const {user, setUser} = useContext(UserContext);
+
+  const checkUserToken = async () => {
+    try {
+        const {data} = await axios.get('/me');
+        if (data.success === true) {
+            setUser(data.user);
+            // console.log(data.user)
+        }
+    }
+    catch(err){
+        console.log(err);
+    }
+}
+
+  useEffect(() => {
+      if (user === null) {
+          checkUserToken();            
+      }   
+  }, []);
 
   return (
     <div>
@@ -19,10 +39,10 @@ function Router({baseUrl}) {
 
         <Routes>
             <Route path="/" element={<Home/>} />
-            <Route path="/login" element={<Login baseUrl={baseUrl} />} />
+            <Route path="/login" element={<Login/>} />
             <Route path="/register" element={<Register />} />
             <Route path="/financialLiteracy/:pageID" element={<FinLit />}/>
-            {user !== null ? <Route path="/dashboard" element={<Dashboard />} /> : null}
+            <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
 
         <Footer />
