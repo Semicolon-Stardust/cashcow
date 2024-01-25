@@ -19,7 +19,7 @@ function Router() {
   return (
     <div>
         {
-            user ? <Navbar /> : <LoggedInNavbar />
+            user ? <LoggedInNavbar /> : <Navbar />
         }
 
         <Routes>
