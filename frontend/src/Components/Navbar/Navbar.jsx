@@ -117,7 +117,7 @@ function Navbar() {
   // }, [isdark]);
 
   return (
-    <div>
+    <div className="sticky top-0 z-50">
       {/* <div className="navbar bg-base-100 z-[100] top-0 left-0 px-6 fixed border-b-4 border-info">
 				<div className="navbar-start">
 					<div className="dropdown">
@@ -197,16 +197,30 @@ function Navbar() {
 					}
 				</div>
 			</div> */}
-
-      <header className="flex flex-wrap sm:justify-start sm:flex-col z-[100] fixed top-0 left-0 w-full bg-white border-b border-gray-200 text-sm pb-2 sm:pb-0 dark:bg-gray-800 dark:border-gray-700">
-        <div className="max-w-[85rem] mx-auto w-full px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-end gap-x-5 w-full py-2 sm:pt-2 sm:pb-0">
-            <a
-              className="inline-flex justify-center items-center gap-2 font-medium text-slate-600 hover:text-slate-500 text-sm dark:text-slate-400 dark:hover:text-slate-300"
-              href="#"
+      <header className="flex flex-wrap sm:justify-start sm:flex-nowrap w-full bg-white text-sm py-4 dark:bg-gray-800">
+        <nav
+          className="max-w-[85rem] w-full mx-auto px-4 flex flex-wrap basis-full items-center justify-between"
+          aria-label="Global"
+        >
+          <Link
+            to="/"
+            className="btn flex justify-center items-center btn-ghost font-tiltWrap font-[900] text-2xl dark:text-white"
+          >
+            <div className="w-[3rem] ">
+              <img src={logo} alt="Logo" />
+            </div>
+            CashCow
+          </Link>
+          <div className="sm:order-3 flex items-center gap-x-2">
+            <button
+              type="button"
+              className="sm:hidden hs-collapse-toggle p-2.5 inline-flex justify-center items-center gap-x-2 rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-transparent dark:border-gray-700 dark:text-white dark:hover:bg-white/10 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+              data-hs-collapse="#navbar-alignment"
+              aria-controls="navbar-alignment"
+              aria-label="Toggle navigation"
             >
               <svg
-                className="flex-shrink-0 w-3.5 h-3.5"
+                className="hs-collapse-open:hidden flex-shrink-0 w-4 h-4"
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"
@@ -214,238 +228,102 @@ function Navbar() {
                 fill="none"
                 stroke="currentColor"
               >
-                <path d="M21.54 15H17a2 2 0 0 0-2 2v4.54" />
-                <path d="M7 3.34V5a3 3 0 0 0 3 3v0a2 2 0 0 1 2 2v0c0 1.1.9 2 2 2v0a2 2 0 0 0 2-2v0c0-1.1.9-2 2-2h3.17" />
-                <path d="M11 21.95V18a2 2 0 0 0-2-2v0a2 2 0 0 1-2-2v-1a2 2 0 0 0-2-2H2.05" />
-                <circle cx="12" cy="12" r="10" />
+                <line x1="3" x2="21" y1="6" y2="6" />
+                <line x1="3" x2="21" y1="12" y2="12" />
+                <line x1="3" x2="21" y1="18" y2="18" />
               </svg>
-              English (US)
-            </a>
+              <svg
+                className="hs-collapse-open:block hidden flex-shrink-0 w-4 h-4"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+              >
+                <path d="M18 6 6 18" />
+                <path d="m6 6 12 12" />
+              </svg>
+            </button>
             <Link
-              className="inline-flex justify-center items-center gap-2 font-medium text-slate-600 hover:text-slate-500 text-sm dark:text-slate-400 dark:hover:text-slate-300"
-              to="/login"
-            >
-              Sign In
-            </Link>
-            <Link
-              className="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-blue-600 text-blue-600 hover:border-blue-500 hover:text-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:border-blue-500 dark:text-blue-500 dark:hover:text-blue-400 dark:hover:border-blue-400 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
               to="/register"
+              className="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
             >
-              Get started
+              Register
             </Link>
-            <div>
-              <button
-                type="button"
-                className="hs-dark-mode-active:hidden block hs-dark-mode group flex items-center text-gray-600 hover:text-blue-600 font-medium dark:text-gray-400 dark:hover:text-gray-500"
-                data-hs-theme-click-value="dark"
-              >
-                <svg
-                  className="flex-shrink-0 w-4 h-4"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                >
-                  <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
-                </svg>
-              </button>
-              <button
-                type="button"
-                className="hs-dark-mode-active:block hidden hs-dark-mode group flex items-center text-gray-600 hover:text-blue-600 font-medium dark:text-gray-400 dark:hover:text-gray-500"
-                data-hs-theme-click-value="light"
-              >
-                <svg
-                  className="flex-shrink-0 w-4 h-4"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                >
-                  <circle cx="12" cy="12" r="4" />
-                  <path d="M12 8a2 2 0 1 0 4 4" />
-                  <path d="M12 2v2" />
-                  <path d="M12 20v2" />
-                  <path d="m4.93 4.93 1.41 1.41" />
-                  <path d="m17.66 17.66 1.41 1.41" />
-                  <path d="M2 12h2" />
-                  <path d="M20 12h2" />
-                  <path d="m6.34 17.66-1.41 1.41" />
-                  <path d="m19.07 4.93-1.41 1.41" />
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <nav
-          className="relative max-w-[85rem] w-full mx-auto px-4 sm:flex sm:items-center sm:justify-between sm:px-6 lg:px-8"
-          aria-label="Global"
-        >
-          <div className="flex items-center justify-between">
-            <Link
-              className="flex-none text-xl font-semibold dark:text-white flex items-center gap-x-2"
-              to="/"
-              aria-label="Brand"
+            <button
+              type="button"
+              className="hs-dark-mode-active:hidden block hs-dark-mode group flex items-center text-gray-600 hover:text-blue-600 font-medium dark:text-gray-400 dark:hover:text-gray-500"
+              data-hs-theme-click-value="dark"
             >
-              <div className="w-[3rem]">
-                <img src={logo} alt="Logo" />
-              </div>
-              CashCow
-            </Link>
-            <div className="sm:hidden">
-              <button
-                type="button"
-                className="hs-collapse-toggle w-9 h-9 flex justify-center items-center text-sm font-semibold rounded-lg border border-gray-200 text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                data-hs-collapse="#navbar-collapse-with-animation"
-                aria-controls="navbar-collapse-with-animation"
-                aria-label="Toggle navigation"
+              <svg
+                className="flex-shrink-0 w-4 h-4"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
               >
-                <svg
-                  className="hs-collapse-open:hidden flex-shrink-0 w-4 h-4"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                >
-                  <line x1="3" x2="21" y1="6" y2="6" />
-                  <line x1="3" x2="21" y1="12" y2="12" />
-                  <line x1="3" x2="21" y1="18" y2="18" />
-                </svg>
-                <svg
-                  className="hs-collapse-open:block hidden flex-shrink-0 w-4 h-4"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                >
-                  <path d="M18 6 6 18" />
-                  <path d="m6 6 12 12" />
-                </svg>
-              </button>
-            </div>
+                <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+              </svg>
+            </button>
+            <button
+              type="button"
+              className="hs-dark-mode-active:block hidden hs-dark-mode group flex items-center text-gray-600 hover:text-blue-600 font-medium dark:text-gray-400 dark:hover:text-gray-500"
+              data-hs-theme-click-value="light"
+            >
+              <svg
+                className="flex-shrink-0 w-4 h-4"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="4" />
+                <path d="M12 8a2 2 0 1 0 4 4" />
+                <path d="M12 2v2" />
+                <path d="M12 20v2" />
+                <path d="m4.93 4.93 1.41 1.41" />
+                <path d="m17.66 17.66 1.41 1.41" />
+                <path d="M2 12h2" />
+                <path d="M20 12h2" />
+                <path d="m6.34 17.66-1.41 1.41" />
+                <path d="m19.07 4.93-1.41 1.41" />
+              </svg>
+            </button>
           </div>
           <div
-            id="navbar-collapse-with-animation"
-            className="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow sm:block"
+            id="navbar-alignment"
+            className="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow sm:grow-0 sm:basis-auto sm:block sm:order-2"
           >
-            <div className="flex flex-col gap-y-4 gap-x-0 mt-5 sm:flex-row sm:items-center sm:justify-end sm:gap-y-0 sm:gap-x-7 sm:mt-0 sm:ps-7">
-              <a
-                className="font-medium sm:py-6 text-blue-600"
-                href="#"
-                aria-current={
-                  window.location.pathname === "/" ? "page" : undefined
-                }
+            <div className="flex flex-col gap-5 mt-5 sm:flex-row sm:items-center sm:mt-0 sm:ps-5">
+              <Link
+                className="font-medium dark:text-white *:dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                to="/"
               >
                 Home
-              </a>
-              <a
-                className="font-medium text-gray-800 hover:text-gray-500 sm:py-6 dark:text-gray-200 dark:hover:text-gray-400"
-                href="#"
+              </Link>
+              <Link
+                to="FinancialLiteracy"
+                className="font-medium text-gray-600 hover:text-gray-400 dark:text-gray-400 dark:hover:text-gray-500 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
               >
-                Account
-              </a>
-              <a
-                className="font-medium text-gray-800 hover:text-gray-500 sm:py-6 dark:text-gray-200 dark:hover:text-gray-400"
-                href="#"
+                Financial Literacy
+              </Link>
+              <Link
+                className="font-medium text-gray-600 hover:text-gray-400 dark:text-gray-400 dark:hover:text-gray-500 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                to="/login"
               >
-                Work
-              </a>
-              <a
-                className="font-medium text-gray-800 hover:text-gray-500 sm:py-6 dark:text-gray-200 dark:hover:text-gray-400"
-                href="#"
-              >
-                Blog
-              </a>
-
-              <div className="hs-dropdown [--strategy:static] sm:[--strategy:fixed] [--adaptive:none] sm:[--trigger:hover] sm:py-4">
-                <button
-                  type="button"
-                  className="flex items-center w-full text-gray-800 hover:text-gray-500 font-medium dark:text-gray-200 dark:hover:text-gray-400"
-                >
-                  Dropdown
-                  <svg
-                    className="flex-shrink-0 ms-2 w-4 h-4"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                  >
-                    <path d="m6 9 6 6 6-6" />
-                  </svg>
-                </button>
-
-                <div className="hs-dropdown-menu transition-[opacity,margin] duration-[0.1ms] sm:duration-[150ms] hs-dropdown-open:opacity-100 opacity-0 sm:w-48 hidden z-10 bg-white sm:shadow-md rounded-lg p-2 dark:bg-gray-800 sm:dark:border dark:border-gray-700 dark:divide-gray-700 before:absolute top-full sm:border before:-top-5 before:start-0 before:w-full before:h-5">
-                  <a
-                    className="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                    href="#"
-                  >
-                    About
-                  </a>
-                  <div className="hs-dropdown relative [--strategy:static] sm:[--strategy:absolute] [--adaptive:none] sm:[--trigger:hover]">
-                    <button
-                      type="button"
-                      className="w-full flex justify-between items-center text-sm text-gray-800 rounded-lg py-2 px-3 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                    >
-                      Sub Menu
-                      <svg
-                        className="sm:-rotate-90 flex-shrink-0 ms-2 w-4 h-4"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                      >
-                        <path d="m6 9 6 6 6-6" />
-                      </svg>
-                    </button>
-
-                    <div className="hs-dropdown-menu transition-[opacity,margin] duration-[0.1ms] sm:duration-[150ms] hs-dropdown-open:opacity-100 opacity-0 sm:w-48 hidden z-10 sm:mt-2 bg-white sm:shadow-md rounded-lg p-2 dark:bg-gray-800 sm:dark:border dark:border-gray-700 dark:divide-gray-700 before:absolute sm:border before:-end-5 before:top-0 before:h-full before:w-5 top-0 end-full !mx-[10px]">
-                      <a
-                        className="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                        href="#"
-                      >
-                        About
-                      </a>
-                      <a
-                        className="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                        href="#"
-                      >
-                        Downloads
-                      </a>
-                      <a
-                        className="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                        href="#"
-                      >
-                        Team Account
-                      </a>
-                    </div>
-                  </div>
-
-                  <a
-                    className="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                    href="#"
-                  >
-                    Downloads
-                  </a>
-                  <a
-                    className="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                    href="#"
-                  >
-                    Team Account
-                  </a>
-                </div>
-              </div>
+                Login
+              </Link>
             </div>
           </div>
         </nav>

@@ -19,9 +19,8 @@ function Router() {
   return (
     <div>
         {
-            user ? <LoggedInNavbar /> : <Navbar />
+            user != null ? <LoggedInNavbar /> : <Navbar />
         }
-
         <Routes>
             <Route path="/" element={<Home/>} />
             <Route path="/login" element={<Login/>} />
