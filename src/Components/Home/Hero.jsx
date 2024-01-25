@@ -14,31 +14,9 @@ function Hero() {
     },
     {
       id: 1,
-      images: "",
-      text: "Financial Freedom is a Click Away.",
-      buttonText: "Get Started",
-      buttonPath: "/register",
-    },
-    {
-      id: 2,
       images:
         "https://images.unsplash.com/photo-1553729459-efe14ef6055d?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8TW9uZXl8ZW58MHwwfDB8fHww",
-      text: "Effortless Expense Tracking for a Smarter Financial Future.",
-      buttonText: "Get Started",
-      buttonPath: "/register",
-    },
-    {
-      id: 3,
-      images:
-        "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8TW9uZXl8ZW58MHwwfDB8fHww",
-      text: "Effortless Expense Tracking for a Smarter Financial Future.",
-      buttonText: "Get Started",
-      buttonPath: "/register",
-    },
-    {
-      id: 4,
-      images: "",
-      text: "Effortless Expense Tracking for a Smarter Financial Future.",
+      text: "Financial Freedom is a Click Away.",
       buttonText: "Get Started",
       buttonPath: "/register",
     },
@@ -74,21 +52,11 @@ function Hero() {
     }
   };
 
-  // Pause Button Logic
-  const pauseBanner = () => {
-    setCurrent(current);
-  };
-
-  // Play Button Logic
-  const playBanner = () => {
-    setCurrent(current + 1);
-  };
-
   return (
     // Components
-    <div>
+    <div className="">
       <div
-        className="flex overflow-hidden"
+        className="flex justify-center items-center w-full h-screen"
         // style={{ transform: `translateX(-${current * 100}%)`}}
       >
         {/* Banner Component */}
@@ -103,7 +71,10 @@ function Hero() {
       <div className="absolute bottom-0 left-0 sm:flex justify-between items-center w-full hidden pb-[3rem] p-[3rem]">
         {/* Left & Right Buttons */}
         <div className="join flex justify-between items-center w-full">
-          <button className="join-item btn btn-info" onClick={previousSlide}>
+          <button
+            className="flex flex-shrink-0 justify-center items-center gap-2 h-[2.375rem] w-[2.375rem] text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+            onClick={previousSlide}
+          >
             <svg
               className="w-6 h-6"
               fill="none"
@@ -120,12 +91,12 @@ function Hero() {
             </svg>
           </button>
 
-          <div className="join">
+          <div className="hs-carousel-pagination flex justify-center space-x-2">
             {
             BannerDetails.map((banner) => (
               <input
             key={banner.id}
-            className={"btn btn-ghost rounded-full"}
+            className={"hs-carousel-active:bg-blue-700 hs-carousel-active:border-blue-700 w-3 h-3 border border-gray-400 rounded-full cursor-pointer"}
             type="radio"
             name="options"
             aria-label={banner.id === current ? "●" : `○`}
@@ -136,7 +107,11 @@ function Hero() {
           }
           </div>
 
-          <button className="join-item btn btn-info" onClick={nextSlide}>
+          <button
+            type="button"
+            className="flex flex-shrink-0 justify-center items-center gap-2 h-[2.375rem] w-[2.375rem] text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+            onClick={nextSlide}
+          >
             <svg
               className="w-6 h-6"
               fill="none"
@@ -155,6 +130,10 @@ function Hero() {
         </div>
       </div>
     </div>
+
+    // <>
+    // <Banner />
+    // </>
   );
 }
 

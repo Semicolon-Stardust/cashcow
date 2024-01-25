@@ -3,10 +3,7 @@ import Input from "../Utilities/Input";
 function Professional({input, handleChange}) {
   return (
     <div className="w-full">
-      <div className="flex flex-col gap-5 text-center">
-        <h1 className="text-2xl font-bold">Professional</h1>
-      </div>
-      <div className="h-full flex flex-col justify-center">
+      <div className="h-full flex flex-col justify-center gap-5">
         <Input
           label="Ocupation"
           type="text"

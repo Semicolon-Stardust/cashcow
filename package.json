@@ -10,8 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@preline/stepper": "^2.0.2",
     "axios": "^1.6.5",
     "lucide-react": "^0.312.0",
+    "preline": "^2.0.3",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

@@ -2,8 +2,8 @@ import React from 'react'
 import Hero from './Hero'
 import Features from './Features'
 import HowItWorks from './HowItWorks'
-import Pricing from './Pricing'
 import FAQs from './FAQs'
+import About from './About'
 
 function Home() {
   return (
@@ -20,12 +20,16 @@ function Home() {
             <HowItWorks/>
         </div>
 
-        <div id='pricing' className='my-12'>
-            <Pricing/>
+        <div id='' className='my-12'>
+            
         </div>
 
         <div id='FAQs' className='my-12'>
             <FAQs/>
+        </div>
+
+        <div>
+            <About/>
         </div>
 
     </div>
