@@ -5,12 +5,12 @@ import axios from "axios";
 
 const Dashboard = () => {
   const { user } = useContext(UserContext);
-  const navigate = useNavigate();
-  useEffect(() => {
-    if (user === null) {
-      navigate("/login");
-    }
-  }, []);
+  // const navigate = useNavigate();
+  // useEffect(() => {
+  //   if (user === null) {
+  //     navigate("/login");
+  //   }
+  // }, []);
 
   const [me, setMe] = useState("");
 
