@@ -1,201 +1,199 @@
-
+import { useEffect, useState } from "react";
 
 function HowItWorks() {
+  
   return (
-    <div className="min-h-screen py-9 flex flex-col items-center justify-center gap-[5rem]">
-      <div className="flex flex-col gap-5 text-center">
-        <h1 className="text-4xl font-bold">How It Works?</h1>
-        <p className="">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-        </p>
-      </div>
-      <div>
-        <div className="mx-10 grid lg:grid-cols-3 lg:gap-y-12 lg:gap-x-12">
-          <div className="mb-12 lg:mb-0">
-            <div className="block h-full rounded-lg shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]">
-              <div className="flex justify-center">
-                <div className="-mt-8 inline-block rounded-full bg-info p-4  shadow-md">
+    <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+      <div className="relative p-6 md:p-16">
+        <div className="relative z-10 lg:grid lg:grid-cols-12 lg:gap-16 lg:items-center">
+          <div className="mb-10 lg:mb-0 lg:col-span-6 lg:col-start-8 lg:order-2">
+            <h2 className="text-2xl text-gray-800 font-bold sm:text-3xl dark:text-gray-200">
+              Fully customizable rules to match your unique needs
+            </h2>
+
+            <nav
+              className="grid gap-4 mt-5 md:mt-10"
+              aria-label="Tabs"
+              role="tablist"
+            >
+              <button
+                type="button"
+                className="hs-tab-active:bg-white hs-tab-active:shadow-md hs-tab-active:hover:border-transparent text-start hover:bg-gray-200 p-4 md:p-5 rounded-xl dark:hs-tab-active:bg-slate-900 dark:hover:bg-gray-700 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600 active"
+                id="tabs-with-card-item-1"
+                data-hs-tab="#tabs-with-card-1"
+                aria-controls="tabs-with-card-1"
+                role="tab"
+              >
+                <span className="flex">
                   <svg
+                    className="flex-shrink-0 mt-2 h-6 w-6 md:w-7 md:h-7 hs-tab-active:text-blue-600 text-gray-800 dark:hs-tab-active:text-blue-500 dark:text-gray-200"
                     xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
+                    width="24"
+                    height="24"
                     viewBox="0 0 24 24"
-                    strokeWidth="2"
+                    fill="none"
                     stroke="currentColor"
-                    className="h-7 w-7"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z"
-                    />
+                    <path d="M5 5.5A3.5 3.5 0 0 1 8.5 2H12v7H8.5A3.5 3.5 0 0 1 5 5.5z" />
+                    <path d="M12 2h3.5a3.5 3.5 0 1 1 0 7H12V2z" />
+                    <path d="M12 12.5a3.5 3.5 0 1 1 7 0 3.5 3.5 0 1 1-7 0z" />
+                    <path d="M5 19.5A3.5 3.5 0 0 1 8.5 16H12v3.5a3.5 3.5 0 1 1-7 0z" />
+                    <path d="M5 12.5A3.5 3.5 0 0 1 8.5 9H12v7H8.5A3.5 3.5 0 0 1 5 12.5z" />
                   </svg>
-                </div>
-              </div>
-              <div className="p-6">
-                <h5 className="mb-4 text-lg font-semibold">Support 24/7</h5>
-                <p>
-                  Laudantium totam quas cumque pariatur at doloremque hic quos
-                  quia eius. Reiciendis optio minus mollitia rerum labore
-                  facilis inventore voluptatem ad, quae quia sint.
-                </p>
-              </div>
-            </div>
+                  <span className="grow ms-6">
+                    <span className="block text-lg font-semibold hs-tab-active:text-blue-600 text-gray-800 dark:hs-tab-active:text-blue-500 dark:text-gray-200">
+                      Advanced tools
+                    </span>
+                    <span className="block mt-1 text-gray-800 dark:hs-tab-active:text-gray-200 dark:text-gray-200">
+                      Use Preline thoroughly thought and automated libraries to
+                      manage your businesses.
+                    </span>
+                  </span>
+                </span>
+              </button>
+
+              <button
+                type="button"
+                className="hs-tab-active:bg-white hs-tab-active:shadow-md hs-tab-active:hover:border-transparent text-start hover:bg-gray-200 p-4 md:p-5 rounded-xl dark:hs-tab-active:bg-slate-900 dark:hover:bg-gray-700 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                id="tabs-with-card-item-2"
+                data-hs-tab="#tabs-with-card-2"
+                aria-controls="tabs-with-card-2"
+                role="tab"
+              >
+                <span className="flex">
+                  <svg
+                    className="flex-shrink-0 mt-2 h-6 w-6 md:w-7 md:h-7 hs-tab-active:text-blue-600 text-gray-800 dark:hs-tab-active:text-blue-500 dark:text-gray-200"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                  >
+                    <path d="m12 14 4-4" />
+                    <path d="M3.34 19a10 10 0 1 1 17.32 0" />
+                  </svg>
+                  <span className="grow ms-6">
+                    <span className="block text-lg font-semibold hs-tab-active:text-blue-600 text-gray-800 dark:hs-tab-active:text-blue-500 dark:text-gray-200">
+                      Smart dashboards
+                    </span>
+                    <span className="block mt-1 text-gray-800 dark:hs-tab-active:text-gray-200 dark:text-gray-200">
+                      Quickly Preline sample components, copy-paste codes, and
+                      start right off.
+                    </span>
+                  </span>
+                </span>
+              </button>
+
+              <button
+                type="button"
+                className="hs-tab-active:bg-white hs-tab-active:shadow-md hs-tab-active:hover:border-transparent text-start hover:bg-gray-200 p-4 md:p-5 rounded-xl dark:hs-tab-active:bg-slate-900 dark:hover:bg-gray-700 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                id="tabs-with-card-item-3"
+                data-hs-tab="#tabs-with-card-3"
+                aria-controls="tabs-with-card-3"
+                role="tab"
+              >
+                <span className="flex">
+                  <svg
+                    className="flex-shrink-0 mt-2 h-6 w-6 md:w-7 md:h-7 hs-tab-active:text-blue-600 text-gray-800 dark:hs-tab-active:text-blue-500 dark:text-gray-200"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                  >
+                    <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" />
+                    <path d="M5 3v4" />
+                    <path d="M19 17v4" />
+                    <path d="M3 5h4" />
+                    <path d="M17 19h4" />
+                  </svg>
+                  <span className="grow ms-6">
+                    <span className="block text-lg font-semibold hs-tab-active:text-blue-600 text-gray-800 dark:hs-tab-active:text-blue-500 dark:text-gray-200">
+                      Powerful features
+                    </span>
+                    <span className="block mt-1 text-gray-800 dark:hs-tab-active:text-gray-200 dark:text-gray-200">
+                      Reduce time and effort on building modern look design with
+                      Preline only.
+                    </span>
+                  </span>
+                </span>
+              </button>
+            </nav>
           </div>
 
-          <div className="mb-12 lg:mb-0">
-            <div className="block h-full rounded-lg shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]">
-              <div className="flex justify-center">
-                <div className="-mt-8 inline-block rounded-full bg-info p-4  shadow-md">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="2"
-                    stroke="currentColor"
-                    className="h-7 w-7"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"
-                    />
-                  </svg>
+          <div className="lg:col-span-6">
+            <div className="relative">
+              <div>
+                <div
+                  id="tabs-with-card-1"
+                  role="tabpanel"
+                  aria-labelledby="tabs-with-card-item-1"
+                >
+                  <img
+                    className="shadow-xl shadow-gray-200 rounded-xl dark:shadow-gray-900/[.2]"
+                    src="https://images.unsplash.com/photo-1605629921711-2f6b00c6bbf4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&h=1220&q=80"
+                    alt="Image Description"
+                  />
                 </div>
-              </div>
-              <div className="p-6">
-                <h5 className="mb-4 text-lg font-semibold">Safe and solid</h5>
-                <p>
-                  Eum nostrum fugit numquam, voluptates veniam neque quibusdam
-                  ullam aspernatur odio soluta, quisquam dolore animi mollitia a
-                  omnis praesentium, expedita nobis!
-                </p>
-              </div>
-            </div>
-          </div>
 
-          <div className="mb-12 lg:mb-0">
-            <div className="block h-full rounded-lg shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]">
-              <div className="flex justify-center">
-                <div className="-mt-8 inline-block rounded-full bg-info p-4  shadow-md">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="2"
-                    stroke="currentColor"
-                    className="h-7 w-7"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"
-                    />
-                  </svg>
+                <div
+                  id="tabs-with-card-2"
+                  className="hidden"
+                  role="tabpanel"
+                  aria-labelledby="tabs-with-card-item-2"
+                >
+                  <img
+                    className="shadow-xl shadow-gray-200 rounded-xl dark:shadow-gray-900/[.2]"
+                    src="https://images.unsplash.com/photo-1665686306574-1ace09918530?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&h=1220&q=80"
+                    alt="Image Description"
+                  />
                 </div>
-              </div>
-              <div className="p-6">
-                <h5 className="mb-4 text-lg font-semibold">Extremely fast</h5>
-                <p>
-                  Enim cupiditate, minus nulla dolor cumque iure eveniet facere
-                  ullam beatae hic voluptatibus dolores exercitationem? Facilis
-                  debitis aspernatur amet nisi?
-                </p>
-              </div>
-            </div>
-          </div>
 
-          <div className="mb-12 lg:mb-0">
-            <div className="block h-full rounded-lg shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]">
-              <div className="flex justify-center">
-                <div className="-mt-8 inline-block rounded-full bg-info p-4  shadow-md">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="2"
-                    stroke="currentColor"
-                    className="h-7 w-7"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"
-                    />
-                  </svg>
+                <div
+                  id="tabs-with-card-3"
+                  className="hidden"
+                  role="tabpanel"
+                  aria-labelledby="tabs-with-card-item-3"
+                >
+                  <img
+                    className="shadow-xl shadow-gray-200 rounded-xl dark:shadow-gray-900/[.2]"
+                    src="https://images.unsplash.com/photo-1598929213452-52d72f63e307?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&h=1220&q=80"
+                    alt="Image Description"
+                  />
                 </div>
               </div>
-              <div className="p-6">
-                <h5 className="mb-4 text-lg font-semibold">Extremely fast</h5>
-                <p>
-                  Enim cupiditate, minus nulla dolor cumque iure eveniet facere
-                  ullam beatae hic voluptatibus dolores exercitationem? Facilis
-                  debitis aspernatur amet nisi?
-                </p>
-              </div>
-            </div>
-          </div>
 
-          <div className="mb-12 lg:mb-0">
-            <div className="block h-full rounded-lg shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]">
-              <div className="flex justify-center">
-                <div className="-mt-8 inline-block rounded-full bg-info p-4  shadow-md">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="2"
+              <div className="hidden absolute top-0 end-0 translate-x-20 md:block lg:translate-x-20">
+                <svg
+                  className="w-16 h-auto text-orange-500"
+                  width="121"
+                  height="135"
+                  viewBox="0 0 121 135"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5 16.4754C11.7688 27.4499 21.2452 57.3224 5 89.0164"
                     stroke="currentColor"
-                    className="h-7 w-7"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"
-                    />
-                  </svg>
-                </div>
-              </div>
-              <div className="p-6">
-                <h5 className="mb-4 text-lg font-semibold">Extremely fast</h5>
-                <p>
-                  Enim cupiditate, minus nulla dolor cumque iure eveniet facere
-                  ullam beatae hic voluptatibus dolores exercitationem? Facilis
-                  debitis aspernatur amet nisi?
-                </p>
+                  />
+                  <path
+                    d="M33.6761 112.104C44.6984 98.1239 74.2618 57.6776 83.4821 5"
+                    stroke="currentColor"
+                  />
+                  <path
+                    d="M50.5525 130C68.2064 127.495 110.731 117.541 116 78.0874"
+                    stroke="currentColor"
+                  />
+                </svg>
               </div>
             </div>
           </div>
+        </div>
 
-          <div className="mb-12 lg:mb-0">
-            <div className="block h-full rounded-lg shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]">
-              <div className="flex justify-center">
-                <div className="-mt-8 inline-block rounded-full bg-info p-4  shadow-md">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="2"
-                    stroke="currentColor"
-                    className="h-7 w-7"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"
-                    />
-                  </svg>
-                </div>
-              </div>
-              <div className="p-6">
-                <h5 className="mb-4 text-lg font-semibold">Extremely fast</h5>
-                <p>
-                  Enim cupiditate, minus nulla dolor cumque iure eveniet facere
-                  ullam beatae hic voluptatibus dolores exercitationem? Facilis
-                  debitis aspernatur amet nisi?
-                </p>
-              </div>
-            </div>
-          </div>
+        <div className="absolute inset-0 grid grid-cols-12 w-full h-full">
+          <div className="col-span-full lg:col-span-7 lg:col-start-6 bg-gray-100 w-full h-5/6 rounded-xl sm:h-3/4 lg:h-full dark:bg-white/[.075]"></div>
         </div>
       </div>
     </div>

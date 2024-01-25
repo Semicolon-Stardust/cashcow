@@ -9,6 +9,7 @@ import Register from '../Register/Register'
 import Dashboard from '../Dashboard/Dashboard'
 import { UserContext } from '../../context/UserContext'
 import axios from 'axios';
+import LoggedInNavbar from '../Navbar/LoggedInNavbar'
 
 function Router() {
 
@@ -17,7 +18,9 @@ function Router() {
   
   return (
     <div>
-        <Navbar />
+        {
+            user ? <Navbar /> : <LoggedInNavbar />
+        }
 
         <Routes>
             <Route path="/" element={<Home/>} />

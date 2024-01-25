@@ -3,10 +3,10 @@ export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
+    'node_modules/preline/dist/*.js',
   ],
-  daisyui: {
-    themes: ["corporate", "black"],
-  },
+
+  darkMode: 'class', 
   theme: {
     fontFamily: {
       'josefinSans': ['Josefin Sans', 'sans-serif'],
@@ -25,5 +25,5 @@ export default {
     },
   },
   // eslint-disable-next-line no-undef
-  plugins: [require('daisyui')],
+  plugins: [require('preline/plugin'),],
 }
