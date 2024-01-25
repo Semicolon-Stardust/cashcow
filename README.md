@@ -2,7 +2,7 @@
 
 ## Overview
 
-CashCow is a comprehensive financial management application developed using the MERN stack (MongoDB, Express.js, React.js, Node.js). It leverages additional technologies such as D3.js for data visualization and Tailwind CSS with DaisyUI for a responsive and modern user interface.
+CashCow is a comprehensive financial management application developed using the MERN stack (MongoDB, Express.js, React.js, Node.js). It leverages additional technologies such as D3.js for data visualization and Tailwind CSS with PrelineUI for a responsive and modern user interface.
 
 ## Features
 
@@ -36,7 +36,7 @@ The application utilizes D3.js to create visually appealing graphs that represen
 - **Backend**: Node.js, Express.js
 - **Database**: MongoDB
 - **Data Visualization**: D3.js
-- **UI Framework**: Tailwind CSS with DaisyUI
+- **UI Framework**: Tailwind CSS with PrelineUI
 
 ## Getting Started
 
