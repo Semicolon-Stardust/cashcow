@@ -1,31 +1,28 @@
 import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
 import Markdown from "markdown-to-jsx"
 
-const Post = () => {
-	const [postContent, setPostContent] = useState('');
+function FinLit() {
+	const fileName = "Budgeting.md";
+	const [post, setPost] = useState("");
 
 	useEffect(() => {
-		import("../markdown/Budgeting.md")
+		import(`./markdown/${fileName}.md`)
 			.then(res => {
 				fetch(res.default)
-				.then(response => response.text())
-				.then(text => setPostContent(response))
-				.catch(err => console.log(err))
-			})
-	})
+					.then(res => res.text())
+					.then(res => setPost(res));
+			}).catch(err => console.log(err));
+	});
 
 	return (
-		<div className='post-wrapper'>
-			<Markdown>{postContent}</Markdown>
+		<div>
+			<Markdown>
+				{post}
+			</Markdown>
 		</div>
-	)
-}
-
-function FinLit() {
-	return (
-		<div>FinLit</div>
-	)
+	);
 }
 
 export default FinLit
+
+
