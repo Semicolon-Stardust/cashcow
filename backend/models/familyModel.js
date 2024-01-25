@@ -10,14 +10,10 @@ const familySchema = new mongoose.Schema({
     },
     members: {
         type: Array,
-        required: [true, "Please enter family members"],
-    },
-    category: {
-        type: String,
-        required: [true, "Please select category for this family"],
+        default: [],
     },
     admin:{
-        type: mongoose.Schema.ObjectId,
+        type: String,
         required: true
     },
     createdAt: {

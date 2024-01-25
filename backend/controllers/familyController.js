@@ -1,4 +1,4 @@
-const Transaction = require('../models/transactionModel');
+const Family = require('../models/familyModel');
 const ErrorHandler = require('../utils/errorHandler');
 const catchAsyncErrors = require('../middleware/catchAsyncErrors');
 const ApiFeatures = require('../utils/apiFeatures');
@@ -7,16 +7,16 @@ const ApiFeatures = require('../utils/apiFeatures');
 
 
 
-// Create new transaction => /api/v1/transaction/new 
-exports.createTransaction = catchAsyncErrors(async (req, res, next) => {
+// Create new family => /api/v1/family/new 
+exports.createFamily = catchAsyncErrors(async (req, res, next) => {
 
-        req.body.user = req.user.id;
+        req.body.admin = req.user.email;
     
-        const transaction = await Transaction.create(req.body);
+        const family = await Family.create(req.body);
 
         res.status(201).json({
             success: true,
-            transaction
+            family
         })
 
 
@@ -25,17 +25,15 @@ exports.createTransaction = catchAsyncErrors(async (req, res, next) => {
 
 
 
+exports.updateFamily = catchAsyncErrors( async (req, res, next) => {
 
-// Update transaction details => /api/v1/transaction/:id   -- ADMIN ONLY
-exports.updateTransaction = catchAsyncErrors( async (req, res, next) => {
+    let family = await Family.findById(req.params.id);
 
-    let transaction = await Transaction.findById(req.params.id);
-
-    if(!transaction) {
-        return next(new ErrorHandler("Transaction not found", 404));
+    if(!family) {
+        return next(new ErrorHandler("Family not found", 404));
     }
 
-    transaction = await Transaction.findByIdAndUpdate(req.params.id, req.body, {
+    family = await Family.findByIdAndUpdate(req.params.id, req.body, {
         new: true,
         runValidators: true,
         useFindAndModify: false
@@ -43,27 +41,27 @@ exports.updateTransaction = catchAsyncErrors( async (req, res, next) => {
 
     res.status(200).json({
         success: true,
-        transaction
+        family
     })
 })
 
 
 
 
-// Delete transaction => /api/v1/transaction/:id   -- ADMIN ONLY
-exports.deleteTransaction = catchAsyncErrors(async (req, res, next) => {
+// Delete family => /api/v1/family/:id  
+exports.deleteFamily = catchAsyncErrors(async (req, res, next) => {
 
-    const transaction = await Transaction.findById(req.params.id);
+    const family = await Family.findById(req.params.id);
 
-    if(!transaction) {
-        return next(new ErrorHandler("Transaction not found", 404));
+    if(!family) {
+        return next(new ErrorHandler("Family not found", 404));
     }
 
-    await transaction.remove();
+    await family.remove();
 
     res.status(200).json({
         success: true,
-        message: "Transaction is deleted"
+        message: "Family is deleted"
     })
 })
 
@@ -71,40 +69,40 @@ exports.deleteTransaction = catchAsyncErrors(async (req, res, next) => {
 
 
 
-// Fetch single transaction details => /api/v1/transaction/:id
-exports.getSingleTransaction = catchAsyncErrors(async (req, res, next) => {
+// Fetch single family details => /api/v1/family/:id
+exports.getSingleFamily = catchAsyncErrors(async (req, res, next) => {
     
-    const transaction = await Transaction.findById(req.params.id);
+    const family = await Family.findById(req.params.id);
 
-    if(!transaction) {
-        return next(new ErrorHandler("Transaction not found", 404));
+    if(!family) {
+        return next(new ErrorHandler("Family not found", 404));
     }
 
     res.status(200).json({
         success: true,
-        transaction
+        family
     })
 });
 
 
 
 
-//  Fetch all transaction details => /api/v1/transactions/
-exports.getAllTransactions = catchAsyncErrors(async (req, res) => {
+//  Fetch all family details => /api/v1/familys/
+exports.getAllFamilys = catchAsyncErrors(async (req, res) => {
 
     const resultPerPage = 5;
-    const transactionCount = await Transaction.countDocuments();
+    const familyCount = await Family.countDocuments();
     
-    const apiFeature = new ApiFeatures(Transaction.find(), req.query)
+    const apiFeature = new ApiFeatures(Family.find(), req.query)
     .search()
     .filter()
     .pagination(resultPerPage);
-    const transactions = await apiFeature.query;
+    const familys = await apiFeature.query;
 
     res.status(201).json({
         success: true,
-        transaction: transactions,
-        transactionCount
+        family: familys,
+        familyCount
     })
 
 });
