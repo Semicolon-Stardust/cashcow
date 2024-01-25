@@ -1,60 +1,31 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
+import Markdown from "markdown-to-jsx"
 
-import Sidebar from './Sidebar'
-import Budgeting from './Budgeting'
-import Savings from './Savings'
-import Quiz1 from './Quiz1'
+const Post = () => {
+	const [postContent, setPostContent] = useState('');
 
-
-function FinLit() {
-	const {pageID} = useParams()
+	useEffect(() => {
+		import("../markdown/Budgeting.md")
+			.then(res => {
+				fetch(res.default)
+				.then(response => response.text())
+				.then(text => setPostContent(response))
+				.catch(err => console.log(err))
+			})
+	})
 
 	return (
-		<div className='min-h-screen flex'>
-			<Sidebar/>
-			<Pages pageID = {pageID}/>
+		<div className='post-wrapper'>
+			<Markdown>{postContent}</Markdown>
 		</div>
 	)
 }
 
-function Pages({pageID}) 
-{
-	if (pageID === 'Budgeting') 
-	{
-		return (
-			<div>
-				<Budgeting/>
-			</div>
-		)
-	}
-
-	else if (pageID === 'Savings') 
-	{
-		return (
-			<div>
-				<Savings/>
-			</div>
-		)
-	}
-
-	else if (pageID === 'Quiz1')
-	{
-		return (
-			<div>
-				<Quiz1/>
-			</div>
-		)
-	}
-
-	else
-	{
-		return (
-			<div>
-				<Budgeting/>
-			</div>
-		)
-	}
+function FinLit() {
+	return (
+		<div>FinLit</div>
+	)
 }
 
 export default FinLit
