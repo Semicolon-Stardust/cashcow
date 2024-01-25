@@ -35,6 +35,9 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: [true, "Please enter your ocupation"],
     },
+    family: {
+        type: Array
+    },
     role: {
         type: String,
         default: "user"
