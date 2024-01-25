@@ -97,8 +97,8 @@ exports.getAllTransactions = catchAsyncErrors(async (req, res) => {
     
     const apiFeature = new ApiFeatures(Transaction.find(), req.query)
     .search()
-    .filter()
-    .pagination(resultPerPage);
+    .filter();
+    // .pagination(resultPerPage);
     const transactions = await apiFeature.query;
 
     res.status(201).json({

@@ -16,6 +16,7 @@ app.use(cors(corsOption));
 // Route Imports
 const user = require("./routes/userRoute");
 const transaction = require("./routes/transactionRoute");
+const family = require("./routes/familyRoute");
 
 // Middleware Imports
 const errorMiddleware = require("./middleware/error");
@@ -24,6 +25,7 @@ const errorMiddleware = require("./middleware/error");
 // Mount Routes
 app.use("/api/v1", user);
 app.use("/api/v1/transaction", transaction);
+app.use("/api/v1/family", family);
 
 
 // Middleware for Errors
