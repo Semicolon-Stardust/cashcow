@@ -20,7 +20,7 @@ function FAQs() {
               className="hs-accordion-toggle group pb-3 inline-flex items-center justify-between gap-x-3 w-full md:text-lg font-semibold text-start text-gray-800 rounded-lg transition hover:text-gray-500 dark:text-gray-200 dark:hover:text-gray-400 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
               aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-one"
             >
-              Can I cancel at anytime?
+              What is collaborative budgeting, and how does it work in this app?
               <svg
                 className="hs-accordion-active:hidden block flex-shrink-0 w-5 h-5 text-gray-600 group-hover:text-gray-500 dark:text-gray-400"
                 xmlns="http://www.w3.org/2000/svg"
@@ -50,9 +50,9 @@ function FAQs() {
               aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-one"
             >
               <p className="text-gray-800 dark:text-gray-200">
-                Yes, you can cancel anytime no questions are asked while you
-                cancel but we would highly appreciate if you will give us some
-                feedback.
+              Collaborative budgeting in our app allows multiple users to work together on a shared budget. 
+              You can invite family members or friends, allocate expenses, 
+               and track financial goals collectively.
               </p>
             </div>
           </div>
@@ -65,7 +65,7 @@ function FAQs() {
               className="hs-accordion-toggle group pb-3 inline-flex items-center justify-between gap-x-3 w-full md:text-lg font-semibold text-start text-gray-800 rounded-lg transition hover:text-gray-500 dark:text-gray-200 dark:hover:text-gray-400 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
               aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-two"
             >
-              My team has credits. How do we use them?
+              How does expense tracking help me manage my finances better?
               <svg
                 className="hs-accordion-active:hidden block flex-shrink-0 w-5 h-5 text-gray-600 group-hover:text-gray-500 dark:text-gray-400"
                 xmlns="http://www.w3.org/2000/svg"
@@ -95,8 +95,8 @@ function FAQs() {
               aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-two"
             >
               <p className="text-gray-800 dark:text-gray-200">
-                Once your team signs up for a subscription plan. This is where
-                we sit down, grab a cup of coffee and dial in the details.
+              Expense tracking is a crucial feature for understanding where your money goes. Our webapp helps you categorize and visualize expenses, 
+              making it easier to identify spending patterns, set realistic budgets, and make informed financial decisions.
               </p>
             </div>
           </div>
@@ -109,7 +109,7 @@ function FAQs() {
               className="hs-accordion-toggle group pb-3 inline-flex items-center justify-between gap-x-3 w-full md:text-lg font-semibold text-start text-gray-800 rounded-lg transition hover:text-gray-500 dark:text-gray-200 dark:hover:text-gray-400 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
               aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-three"
             >
-              How does Preline's pricing work?
+               Is my financial data safe and secure on this platform?
               <svg
                 className="hs-accordion-active:hidden block flex-shrink-0 w-5 h-5 text-gray-600 group-hover:text-gray-500 dark:text-gray-400"
                 xmlns="http://www.w3.org/2000/svg"
@@ -139,8 +139,8 @@ function FAQs() {
               aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-three"
             >
               <p className="text-gray-800 dark:text-gray-200">
-                Our subscriptions are tiered. Understanding the task at hand and
-                ironing out the wrinkles is key.
+              Absolutely! We prioritize the security of your financial information.
+              We follows strict security measures to ensure that your data remains confidential and protected.
               </p>
             </div>
           </div>
@@ -153,7 +153,7 @@ function FAQs() {
               className="hs-accordion-toggle group pb-3 inline-flex items-center justify-between gap-x-3 w-full md:text-lg font-semibold text-start text-gray-800 rounded-lg transition hover:text-gray-500 dark:text-gray-200 dark:hover:text-gray-400 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
               aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-four"
             >
-              How secure is Preline?
+              How does the collaborative budgeting feature handle shared expenses among users?
               <svg
                 className="hs-accordion-active:hidden block flex-shrink-0 w-5 h-5 text-gray-600 group-hover:text-gray-500 dark:text-gray-400"
                 xmlns="http://www.w3.org/2000/svg"
@@ -183,9 +183,9 @@ function FAQs() {
               aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-four"
             >
               <p className="text-gray-800 dark:text-gray-200">
-                Protecting the data you trust to Preline is our first priority.
-                This part is really crucial in keeping the project in line to
-                completion.
+              Our collaborative budgeting feature simplifies shared expenses. 
+              Users can input shared costs, split bills, and track who owes what. 
+              It's an efficient way to manage joint finances and avoid any confusion among collaborators.
               </p>
             </div>
           </div>
@@ -198,7 +198,7 @@ function FAQs() {
               className="hs-accordion-toggle group pb-3 inline-flex items-center justify-between gap-x-3 w-full md:text-lg font-semibold text-start text-gray-800 rounded-lg transition hover:text-gray-500 dark:text-gray-200 dark:hover:text-gray-400 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
               aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-five"
             >
-              How do I get access to a theme I purchased?
+               Can I set financial goals and monitor my progress within the app?
               <svg
                 className="hs-accordion-active:hidden block flex-shrink-0 w-5 h-5 text-gray-600 group-hover:text-gray-500 dark:text-gray-400"
                 xmlns="http://www.w3.org/2000/svg"
@@ -228,12 +228,9 @@ function FAQs() {
               aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-five"
             >
               <p className="text-gray-800 dark:text-gray-200">
-                If you lose the link for a theme you purchased, don't panic!
-                We've got you covered. You can login to your account, tap your
-                avatar in the upper right corner, and tap Purchases. If you
-                didn't create a login or can't remember the information, you can
-                use our handy Redownload page, just remember to use the same
-                email you originally made your purchases with.
+              Yes, setting financial goals is a key aspect of our app. You can establish savings targets, 
+              debt repayment goals, or any other financial objectives.
+               The app provides visual progress tracking, keeping you motivated on your financial journey.
               </p>
             </div>
           </div>
@@ -246,7 +243,7 @@ function FAQs() {
               className="hs-accordion-toggle group pb-3 inline-flex items-center justify-between gap-x-3 w-full md:text-lg font-semibold text-start text-gray-800 rounded-lg transition hover:text-gray-500 dark:text-gray-200 dark:hover:text-gray-400 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
               aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-six"
             >
-              Upgrade License Type
+              How does this webapp help in increasing my Finaicial literacy?
               <svg
                 className="hs-accordion-active:hidden block flex-shrink-0 w-5 h-5 text-gray-600 group-hover:text-gray-500 dark:text-gray-400"
                 xmlns="http://www.w3.org/2000/svg"
@@ -276,10 +273,8 @@ function FAQs() {
               aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-six"
             >
               <p className="text-gray-800 dark:text-gray-200">
-                There may be times when you need to upgrade your license from
-                the original type you purchased and we have a solution that
-                ensures you can apply your original purchase cost to the new
-                license purchase.
+               There are many ways to increase your financial literacy with our webapp.
+               You can read out documentation, then give Quizzes to test your knowledge.
               </p>
             </div>
           </div>
