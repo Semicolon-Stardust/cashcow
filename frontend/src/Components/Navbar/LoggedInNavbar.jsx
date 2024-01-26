@@ -395,7 +395,6 @@ function LoggedInNavbar() {
                   </li>
                 </ul>
               </div>
-              <div className="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-400 rounded-lg hover:bg-gray-800 hover:text-white focus:outline-none focus:ring-1 focus:ring-gray-600"></div>
             </li>
           </ul>
         </nav>

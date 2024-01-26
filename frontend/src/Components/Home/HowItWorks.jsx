@@ -8,7 +8,7 @@ function HowItWorks() {
         <div className="relative z-10 lg:grid lg:grid-cols-12 lg:gap-16 lg:items-center">
           <div className="mb-10 lg:mb-0 lg:col-span-6 lg:col-start-8 lg:order-2">
             <h2 className="text-2xl text-gray-800 font-bold sm:text-3xl dark:text-gray-200">
-              Fully customizable rules to match your unique needs
+              Features to be Highlighted
             </h2>
 
             <nav
@@ -42,11 +42,12 @@ function HowItWorks() {
                   </svg>
                   <span className="grow ms-6">
                     <span className="block text-lg font-semibold hs-tab-active:text-blue-600 text-gray-800 dark:hs-tab-active:text-blue-500 dark:text-gray-200">
-                      Advanced tools
+                    Great User Experience(UX)
                     </span>
                     <span className="block mt-1 text-gray-800 dark:hs-tab-active:text-gray-200 dark:text-gray-200">
-                      Use Preline thoroughly thought and automated libraries to
-                      manage your businesses.
+                    Explore financial empowerment with our app's seamless and intuitive User Experience.
+                    Effortless navigation personalized design, and secure interactions make 
+                    financial management a breeze.
                     </span>
                   </span>
                 </span>
@@ -75,11 +76,11 @@ function HowItWorks() {
                   </svg>
                   <span className="grow ms-6">
                     <span className="block text-lg font-semibold hs-tab-active:text-blue-600 text-gray-800 dark:hs-tab-active:text-blue-500 dark:text-gray-200">
-                      Smart dashboards
+                    Colaborative Budgeting
                     </span>
                     <span className="block mt-1 text-gray-800 dark:hs-tab-active:text-gray-200 dark:text-gray-200">
-                      Quickly Preline sample components, copy-paste codes, and
-                      start right off.
+                    Elevate your finances with collaborative budgeting. Join forces with family, friends,
+                     or partners to set shared goals, track expenses, and achieve financial success together.
                     </span>
                   </span>
                 </span>
@@ -111,11 +112,11 @@ function HowItWorks() {
                   </svg>
                   <span className="grow ms-6">
                     <span className="block text-lg font-semibold hs-tab-active:text-blue-600 text-gray-800 dark:hs-tab-active:text-blue-500 dark:text-gray-200">
-                      Powerful features
+                    Finaicial Inclusivity
                     </span>
                     <span className="block mt-1 text-gray-800 dark:hs-tab-active:text-gray-200 dark:text-gray-200">
-                      Reduce time and effort on building modern look design with
-                      Preline only.
+                    Explore financial empowerment with our app's seamless and intuitive User Experience. Effortless navigation,
+                     personalized design, and secure interactions make financial management a breeze.
                     </span>
                   </span>
                 </span>
