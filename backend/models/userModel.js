@@ -35,6 +35,10 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: [true, "Please enter your ocupation"],
     },
+    currentBalance: {
+        type: Number,
+        default: 0
+    },
     family: {
         type: Array
     },

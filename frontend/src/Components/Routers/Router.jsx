@@ -26,7 +26,7 @@ function Router() {
             <Route path="/login" element={<Login/>} />
             <Route path="/register" element={<Register />} />
             <Route path="/financialLiteracy/:pageID" element={<FinLit />}/>
-            { user != null ? <Route path="/dashboard" element={<Dashboard />} /> : null }
+            { user != null ? <Route path="/dashboard" element={<Dashboard />} /> : <Route path="/dashboard" element={<Login />} /> }
         </Routes>
 
         <Footer />

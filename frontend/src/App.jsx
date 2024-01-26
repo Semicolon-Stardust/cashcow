@@ -12,9 +12,7 @@ function App() {
     <>
       <div className="dark:bg-gray-800">
         <BrowserRouter>
-          <UserProvider>
             <Router />
-          </UserProvider>
         </BrowserRouter>
       </div>
     </>
