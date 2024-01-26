@@ -1,7 +1,6 @@
 import React, {useEffect, useContext} from 'react'
 import Navbar from '../Navbar/Navbar'
 import Home from '../Home/Home'
-import FinLit from '../FinLit/FinLit'
 import { Route, Routes } from 'react-router-dom'
 import Footer from '../Footer/Footer'
 import Login from '../Login/Login'
@@ -21,7 +20,6 @@ function Router() {
             <Route path="/" element={<Home/>} />
             <Route path="/login" element={<Login/>} />
             <Route path="/register" element={<Register />} />
-            <Route path="/financialLiteracy/:pageID" element={<FinLit />}/>
             {/* { user != null ? <Route path="/dashboard" element={<Dashboard />} /> : null } */}
             <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
