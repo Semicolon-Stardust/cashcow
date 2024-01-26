@@ -1,14 +1,12 @@
 import React from 'react'
 import LoggedInNavbar from '../Navbar/LoggedInNavbar'
 
-function EMI() {
+function Family() {
   return (
     <div>
-      <div>
         <LoggedInNavbar />
-      </div>
     </div>
   )
 }
 
-export default EMI
+export default Family

@@ -1,22 +1,22 @@
 import React from "react";
 
-function TransactionInputModal() {
+function FamilyInputModal() {
   return (
     <div>
       <div
-        id="transactions"
+        id="family"
         className="hs-overlay hidden w-full h-full fixed top-0 start-0 z-[80] overflow-x-hidden overflow-y-auto pointer-events-none "
       >
         <div className="hs-overlay-open:mt-7 hs-overlay-open:opacity-100 hs-overlay-open:duration-500 mt-0 opacity-0 ease-out transition-all sm:max-w-4xl sm:w-full m-3 sm:mx-auto h-[calc(100%-3.5rem)]">
           <div className="max-h-full overflow-hidden flex flex-col bg-white border shadow-sm rounded-xl pointer-events-auto dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7]">
             <div className="flex justify-between items-center py-3 px-4 border-b dark:border-gray-700">
               <h3 className="font-bold text-gray-800 dark:text-gray-200">
-                Add Transaction
+                Add Family
               </h3>
               <button
                 type="button"
                 className="flex justify-center items-center w-7 h-7 text-sm font-semibold rounded-lg border border-transparent text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:border-transparent dark:hover:bg-gray-700 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                data-hs-overlay="#transactions"
+                data-hs-overlay="#family"
               >
                 <span className="sr-only">Close</span>
                 <svg
@@ -41,7 +41,7 @@ function TransactionInputModal() {
                     htmlFor="input-label"
                     className="block text-sm font-medium mb-2 dark:text-white"
                   >
-                    Transaction Name
+                    Family Name
                   </label>
                   <input
                     type="email"
@@ -56,7 +56,7 @@ function TransactionInputModal() {
                     htmlFor="input-label"
                     className="block text-sm font-medium mb-2 dark:text-white"
                   >
-                    Transaction Amount
+                    Family Amount
                   </label>
                   <input
                     type="email"
@@ -71,7 +71,7 @@ function TransactionInputModal() {
                     htmlFor="input-label"
                     className="block text-sm font-medium mb-2 dark:text-white"
                   >
-                    Transaction Date
+                    Date
                   </label>
                   <input
                     type="date"
@@ -154,4 +154,4 @@ function TransactionInputModal() {
   );
 }
 
-export default TransactionInputModal;
+export default FamilyInputModal;

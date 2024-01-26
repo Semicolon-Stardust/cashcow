@@ -1,44 +1,44 @@
-import { useState } from "react";
-import TransactionInputModal from "../Modals/TransactionInputModal";
+import React from 'react'
+import FamilyInputModal from '../Modals/FamilyInputModal'
 
-function QuickExpenseTable() {
-  const [tableData, setTableData] = useState();
+function QuickFamilyTable() {
 
-  const transactionData = [
-    {
-      id: 1,
-      name: "Groceries",
-      amount: "₹ 1000.00",
-      date: "12/12/2021",
-      paymentMethod: "Cash",
-    },
-    {
-      id: 2,
-      name: "Groceries",
-      amount: "₹ 1000.00",
-      date: "12/12/2021",
-      paymentMethod: "Cash",
-    },
-    {
-      id: 3,
-      name: "Groceries",
-      amount: "₹ 1000.00",
-      date: "12/12/2021",
-      paymentMethod: "Cash",
-    },
-  ];
+    const familyData = [
 
+        {
+            id: 1,
+            name: "Rajesh",
+            amount: "₹ 1000.00",
+            date: "1 Jan",
+            paymentMethod: "UPI",
+            },
+            {
+            id: 2,
+            name: "Suresh",
+            amount: "₹ 1000.00",
+            date: "1 Jan",
+            paymentMethod: "UPI",
+            },
+            {
+            id: 3,
+            name: "Narmesh",
+            amount: "₹ 1000.00",
+            date: "1 Jan",
+            paymentMethod: "UPI",
+            },
+    ]
   return (
     <div>
-      <div className="flex flex-col">
+
+<div className="flex flex-col">
         <div className="-m-1.5 overflow-x-auto">
           <div className="p-1.5 min-w-full inline-block align-middle">
             <div className="my-4 flex justify-between items-center">
               <h1 className="text-2xl text-gray-800 dark:text-gray-200">
                 Total Balance: <span className="text-red-500">₹ 0.00</span>
               </h1>
-              <button className="flex items-center justify-center py-3 px-4 gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" data-hs-overlay="#transactions">
-                Add Transaction
+              <button className="flex items-center justify-center py-3 px-4 gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" data-hs-overlay="#family">
+                Add Family
                 <svg
                   className="w-5 h-5 ms-1 inline-block"
                   xmlns="http://www.w3.org/2000/svg"
@@ -62,19 +62,19 @@ function QuickExpenseTable() {
                       scope="col"
                       className="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase"
                     >
-                      Transaction Name
+                      Family Name
                     </th>
                     <th
                       scope="col"
                       className="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase"
                     >
-                      Transaction Amount
+                      Family Amount
                     </th>
                     <th
                       scope="col"
                       className="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase"
                     >
-                      Transaction Date
+                      Date
                     </th>
                     <th
                       scope="col"
@@ -85,27 +85,27 @@ function QuickExpenseTable() {
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
-                  {transactionData.map((transaction) => (
-                    <tr key={transaction.id}>
+                  {familyData.map((family) => (
+                    <tr key={family.id}>
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="flex items-center">
                           <div className="text-sm font-medium text-gray-500">
-                            {transaction.name}
+                            {family.name}
                           </div>
                         </div>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="text-sm text-gray-500">
-                          {transaction.amount}
+                          {family.amount}
                         </div>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="text-sm text-gray-500">
-                          {transaction.date}
+                          {family.date}
                         </div>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        {transaction.paymentMethod}
+                        {family.paymentMethod}
                       </td>
                     </tr>
                   ))}
@@ -114,10 +114,11 @@ function QuickExpenseTable() {
             </div>
           </div>
         </div>
+        <FamilyInputModal />
       </div>
-      <TransactionInputModal />
+        
     </div>
-  );
+  )
 }
 
-export default QuickExpenseTable;
+export default QuickFamilyTable
