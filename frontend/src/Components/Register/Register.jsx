@@ -111,8 +111,7 @@ function Register() {
                 Register
               </h1>
               <p className="text-gray-600 dark:text-gray-400">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Quisquam
+              Follow the stepper and register your account.
               </p>
             </div>
           </div>
