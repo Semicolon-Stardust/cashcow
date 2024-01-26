@@ -26,6 +26,25 @@ const transactionSchema = new mongoose.Schema({
         type: mongoose.Schema.ObjectId,
         ref: "Family",
     },
+    recurring: {
+        type: Boolean,
+        default: false
+    },
+    recurringDate: {
+        type: Date,
+    },
+    recurringType: {
+        type: String,
+        enum: {
+            values: [
+                "daily",
+                "weekly",
+                "monthly",
+                "yearly",
+            ],
+            message: "Please select correct recurring type"
+        }
+    },
     createdAt: {
         type: Date,
         default: Date.now

@@ -1,17 +1,13 @@
 import React, { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../context/UserContext";
 import { useNavigate } from "react-router-dom";
+import ExpenditureChart from "./ExpenditureChart";
 import axios from "axios";
 import LoggedInNavbar from "../Navbar/LoggedInNavbar";
 
 const Dashboard = () => {
   const { user } = useContext(UserContext);
-  // const navigate = useNavigate();
-  // useEffect(() => {
-  //   if (user === null) {
-  //     navigate("/login");
-  //   }
-  // }, []);
+  
 
   const [me, setMe] = useState("");
 
@@ -30,7 +26,9 @@ const Dashboard = () => {
         </div> :
         null} */}
 
-      <div className="w-full pt-10 px-4 sm:px-6 md:px-8 lg:ps-72"></div>
+      <div className="w-full pt-10 px-4 sm:px-6 md:px-8 lg:ps-72">
+        <ExpenditureChart />
+      </div>
     </>
   );
 };
