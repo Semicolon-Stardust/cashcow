@@ -45,6 +45,10 @@ const transactionSchema = new mongoose.Schema({
             message: "Please select correct recurring type"
         }
     },
+    paymentMethod: {
+        type: String,
+        required: [true, "Please select payment method for this transaction"],
+    },
     createdAt: {
         type: Date,
         default: Date.now

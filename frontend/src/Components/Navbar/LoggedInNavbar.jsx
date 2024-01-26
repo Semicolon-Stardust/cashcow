@@ -1,8 +1,31 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, {useContext} from "react";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 import logo from "../../assets/logo.png";
 
+import { UserContext } from "../../context/UserContext";
+
+
 function LoggedInNavbar() {
+
+  const navigate = useNavigate();
+  const { user, setUser } = useContext(UserContext);
+
+
+  const logoutCall = async () => {
+    try{
+      const { data } = await axios.get("/logout");
+      if (data.success === true) {
+        setUser(null);
+        navigate("/");
+      }
+    }
+    catch(err){
+      console.log(err);
+    }
+  }
+
+
   const HSThemeAppearance = {
     init() {
       const defaultTheme = "default";
@@ -366,7 +389,7 @@ function LoggedInNavbar() {
                     </a>
                   </li>
                   <li>
-                    <button className="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-400 rounded-lg hover:bg-gray-800 hover:text-white focus:outline-none focus:ring-1 focus:ring-gray-600">
+                    <button onClick={logoutCall} className="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-400 rounded-lg hover:bg-gray-800 hover:text-white focus:outline-none focus:ring-1 focus:ring-gray-600">
                       Logout
                     </button>
                   </li>
