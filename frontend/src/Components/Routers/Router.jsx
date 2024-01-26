@@ -20,8 +20,8 @@ function Router() {
             <Route path="/" element={<Home/>} />
             <Route path="/login" element={<Login/>} />
             <Route path="/register" element={<Register />} />
-            {/* { user != null ? <Route path="/dashboard" element={<Dashboard />} /> : null } */}
-            <Route path="/dashboard" element={<Dashboard />} />
+            { user != null ? <Route path="/dashboard" element={<Dashboard />} /> : <Route path="/dashboard" element={<Login />} /> }
+            {/* <Route path="/dashboard" element={<Dashboard />} /> */}
         </Routes>
 
     </div>

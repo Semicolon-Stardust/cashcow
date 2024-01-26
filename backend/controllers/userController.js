@@ -217,6 +217,11 @@ exports.updateUserProfile = catchAsyncErrors(async (req, res, next) => {
 
 
 
+// U
+
+
+
+
 // Get all Users (admin)
 
 exports.getAllUsers = catchAsyncErrors(async (req, res, next) => {
