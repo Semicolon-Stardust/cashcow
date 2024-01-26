@@ -56,7 +56,7 @@ function Hero() {
     // Components
     <div className="">
       <div
-        className="flex justify-center items-center w-full h-screen"
+        className="flex justify-center items-center w-full min-h-screen"
         // style={{ transform: `translateX(-${current * 100}%)`}}
       >
         {/* Banner Component */}
