@@ -6,6 +6,7 @@ import axios from "axios";
 import LoggedInNavbar from "../Navbar/LoggedInNavbar";
 import DashboardNavbar from "../Navbar/DashboardNavbar";
 import QuickExpenseTable from "../Table/QuickExpenseTable";
+import QuickFamilyTable from "../Table/QuickFamilyTable";
 
 const Dashboard = () => {
   const { user } = useContext(UserContext);
@@ -32,9 +33,12 @@ const Dashboard = () => {
           <ExpenditureChart />
         </div>
         <div className="border-t sm:border-t-0 sm:border-s border-gray-200 dark:border-gray-700"></div>
-        <div className="">
+        <div className="flex flex-col justify-center items-center gap-10">
           <div className="flex flex-col gap-5 justify-center items-center">
             <QuickExpenseTable />
+          </div>
+          <div className="flex flex-col gap-5 justify-center items-center">
+            <QuickFamilyTable />
           </div>
         </div>
       </div>
