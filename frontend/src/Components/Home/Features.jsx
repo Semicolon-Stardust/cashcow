@@ -13,7 +13,7 @@ function Features() {
       </div>
       <div className="mt-5">
         <h3 className="text-lg font-semibold text-gray-800 dark:text-white">Responsive</h3>
-        <p className="mt-1 text-gray-600 dark:text-gray-400">Responsive, and mobile-first project on the web</p>
+        <p className="mt-1 text-gray-600 dark:text-gray-400">Experience seamless financial learning with our responsive design</p>
       </div>
     </div>
 
@@ -22,8 +22,8 @@ function Features() {
         <svg className="flex-shrink-0 w-6 h-6 text-blue-600 dark:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 7h-9"/><path d="M14 17H5"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/></svg>
       </div>
       <div className="mt-5">
-        <h3 className="text-lg font-semibold text-gray-800 dark:text-white">Customizable</h3>
-        <p className="mt-1 text-gray-600 dark:text-gray-400">Components are easily customized and extendable</p>
+        <h3 className="text-lg font-semibold text-gray-800 dark:text-white">User Friendly UI</h3>
+        <p className="mt-1 text-gray-600 dark:text-gray-400">An intuitive and responsive design ensures that users can easily navigate</p>
       </div>
     </div>
 
@@ -32,8 +32,8 @@ function Features() {
         <svg className="flex-shrink-0 w-6 h-6 text-blue-600 dark:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
       </div>
       <div className="mt-5">
-        <h3 className="text-lg font-semibold text-gray-800 dark:text-white">Documentation</h3>
-        <p className="mt-1 text-gray-600 dark:text-gray-400">Every component and plugin is well documented</p>
+        <h3 className="text-lg font-semibold text-gray-800 dark:text-white">Colaborative Budgenting and Expense Tracking</h3>
+        <p className="mt-1 text-gray-600 dark:text-gray-400">Transform the way you manage your finances</p>
       </div>
     </div>
 
