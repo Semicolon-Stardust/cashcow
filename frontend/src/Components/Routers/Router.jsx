@@ -9,7 +9,6 @@ import Register from '../Register/Register'
 import Dashboard from '../Dashboard/Dashboard'
 import { UserContext } from '../../context/UserContext'
 import axios from 'axios';
-import LoggedInNavbar from '../Navbar/LoggedInNavbar'
 
 function Router() {
 
@@ -18,19 +17,14 @@ function Router() {
   
   return (
     <div>
-        {
-            user != null ? <LoggedInNavbar /> : <Navbar />
-        }
         <Routes>
             <Route path="/" element={<Home/>} />
             <Route path="/login" element={<Login/>} />
             <Route path="/register" element={<Register />} />
             <Route path="/financialLiteracy/:pageID" element={<FinLit />}/>
-            { user != null ? <Route path="/dashboard" element={<Dashboard />} /> : <Route path="/dashboard" element={<Login />} /> }
+            {/* { user != null ? <Route path="/dashboard" element={<Dashboard />} /> : null } */}
+            <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
-
-        <Footer />
-
 
     </div>
   )
