@@ -109,94 +109,9 @@ function Navbar() {
     });
   });
 
-  // const [isdark, setIsdark] = useState(
-  // 	JSON.parse(localStorage.getItem("isdark"))
-  // );
-  // useEffect(() => {
-  // 	localStorage.setItem("isdark", JSON.stringify(isdark));
-  // }, [isdark]);
 
   return (
-    <div className="sticky top-0 z-50">
-      {/* <div className="navbar bg-base-100 z-[100] top-0 left-0 px-6 fixed border-b-4 border-info">
-				<div className="navbar-start">
-					<div className="dropdown">
-						<div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								className="h-5 w-5"
-								fill="none"
-								viewBox="0 0 24 24"
-								stroke="currentColor"
-							>
-								<path
-									strokeLinecap="round"
-									strokeLinejoin="round"
-									strokeWidth="2"
-									d="M4 6h16M4 12h8m-8 6h16"
-								/>
-							</svg>
-						</div>
-						<ul
-							tabIndex={0}
-							className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
-						>
-							<li>
-								<a href="#hero">Home</a>
-							</li>
-							<li>
-								<a href="#features">Features</a>
-							</li>
-							<li>
-								<a href="#pricing">Pricing</a>
-							</li>
-							<li>
-								<Link to="FinancialLiteracy/Budgeting">Financial Literacy</Link>
-							</li>
-							{user === null ? 
-							<>
-								<li>
-									<Link to="/register">Register</Link>
-								</li>
-								<li>
-									<Link to="/login">Login</Link>
-								</li>
-							</>
-							: null}
-						</ul>
-					</div>
-					<Link to="/" className="btn flex justify-center items-center btn-ghost font-tiltWrap font-[900] text-2xl">
-						<div className="w-[3rem]">
-							<img src={logo} alt="Logo"/>
-						</div>
-						CashCow
-					</Link>
-				</div>
-				<div className="navbar-center hidden lg:flex">
-					<ul className="menu menu-horizontal px-1">
-						<li>
-							<Link to="/">Home</Link>
-						</li>
-						<li>
-							<Link to="/features">Features</Link>
-						</li>
-						<li>
-							<Link to="/pricing">Pricing</Link>
-						</li>
-						<li>
-							<Link to="FinancialLiteracy/Budgeting">Financial Literacy</Link>
-						</li>
-					</ul>
-				</div>
-				<div className="navbar-end flex gap-3 items-center">
-					{user !== null ? <Link to="/dashboard" className="btn btn-ghost sm:flex hidden">{user.name}</Link> : 
-					<>
-					<Link to="/register" className="btn btn-ghost sm:flex hidden">Register</Link>
-					<Link to="/login" className="btn btn-outline sm:flex hidden">Login</Link>
-					</>
-					}
-				</div>
-			</div> */}
+    <div className="fixed top-0 left-0 z-[100] w-full">
       <header className="flex flex-wrap sm:justify-start sm:flex-nowrap w-full bg-white text-sm py-4 dark:bg-gray-800">
         <nav
           className="max-w-[85rem] w-full mx-auto px-4 flex flex-wrap basis-full items-center justify-between"
@@ -245,12 +160,19 @@ function Navbar() {
                 <path d="m6 6 12 12" />
               </svg>
             </button>
-            <Link
+            {
+              user != null ? <Link
+              to="/dashboard"
+              className="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+            >
+              Dashboard
+            </Link> : <Link
               to="/register"
               className="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
             >
               Register
             </Link>
+            }
             <button
               type="button"
               className="hs-dark-mode-active:hidden block hs-dark-mode group flex items-center text-gray-600 hover:text-blue-600 font-medium dark:text-gray-400 dark:hover:text-gray-500"
@@ -264,9 +186,6 @@ function Navbar() {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
               >
                 <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
               </svg>
@@ -284,9 +203,6 @@ function Navbar() {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
               >
                 <circle cx="12" cy="12" r="4" />
                 <path d="M12 8a2 2 0 1 0 4 4" />
@@ -321,9 +237,15 @@ function Navbar() {
               <Link
                 className="font-medium text-gray-600 hover:text-gray-400 dark:text-gray-400 dark:hover:text-gray-500 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
                 to="/login"
-              >
+                >
                 Login
               </Link>
+              <Link className="font-medium text-gray-600 hover:text-gray-400 dark:text-gray-400 dark:hover:text-gray-500 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
+                About Us
+              </Link>
+              <a href="" className="font-medium text-gray-600 hover:text-gray-400 dark:text-gray-400 dark:hover:text-gray-500 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
+                Project Documentation
+              </a>
             </div>
           </div>
         </nav>

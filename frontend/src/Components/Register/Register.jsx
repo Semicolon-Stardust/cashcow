@@ -7,6 +7,7 @@ import Review from "./Review";
 import { UserContext } from "../../context/UserContext";
 import axios from "axios";
 import Input from "../Utilities/Input";
+import Navbar from "../Navbar/Navbar";
 
 function Register() {
   const { user, setUser } = useContext(UserContext);
@@ -84,7 +85,7 @@ function Register() {
     {
       id: 4,
       name: "Review",
-      // component: <Review input={input} handleChange={handleChange} />,
+      component: <Review input={input} handleChange={handleChange} />,
     },
   ];
   const nextStep = () => {
@@ -95,53 +96,12 @@ function Register() {
   };
 
   return (
-    // <div className="min-h-screen flex flex-col justify-center items-center gap-7 w-full sm:my-0 my-[7rem]">
-    //   <div className="flex flex-col gap-5 text-center">
-    //     <h1 className="text-4xl font-bold">Register</h1>
-    //     <p className="">
-    //       Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-    //     </p>
-    //   </div>
-    //   <div>
-    //     <div className="flex justify-center items-center">
-    //       {toastMessage !== "" ? (
-    //         <div className="flex w-[50%] m-auto">
-    //           <h2 className="text-[red] font-semibold text-[20px]">
-    //             {toastMessage}
-    //           </h2>
-    //           <button
-    //             onClick={() => {
-    //               setToastMessage("");
-    //             }}
-    //           >
-    //             {" "}
-    //             remove
-    //           </button>
-    //         </div>
-    //       ) : null}
-    //       <form onSubmit={submitHandler} className="sm:w-[80rem]">
-    //         <div className="flex sm:flex-row flex-col gap-5">
-    //           <Personal input={input} handleChange={handleChange} />
-    //           <div className="divider lg:divider-horizontal sm:divider-vertical"></div>
-    //           <Professional input={input} handleChange={handleChange} />
-    //           <div className="divider lg:divider-horizontal sm:divider-vertical"></div>
-    //           <Credentials input={input} handleChange={handleChange} />
-    //           <div className="my-12 flex justify-end items-center"></div>
-    //         </div>
-    //         <div className="flex justify-end">
-    //           <button className="btn btn-primary">Register</button>
-    //         </div>
-    //       </form>
-    //     </div>
-    //   </div>
-    // </div>
-    <div className="h-screen flex justify-between items-center px-8 relative bg-gradient-to-bl from-blue-100 via-transparent dark:from-blue-950 dark:via-transparent">
-      {/* <div className="flex flex-col my-6 gap-5">
-        <h1 className="text-4xl font-bold dark:text-white">Register</h1>
-        <p className="dark:text-white">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-        </p>
-      </div> */}
+    <div>
+      <div className="">
+        <Navbar />
+      </div>
+
+      <div className="h-screen flex justify-between items-center px-8 relative bg-gradient-to-bl from-blue-100 via-transparent dark:from-blue-950 dark:via-transparent">
 
       <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
         <div className="grid items-center md:grid-cols-2 gap-8 lg:gap-12">
@@ -254,6 +214,7 @@ function Register() {
           </div>
         </form>
       </div>
+    </div>
     </div>
   );
 }
