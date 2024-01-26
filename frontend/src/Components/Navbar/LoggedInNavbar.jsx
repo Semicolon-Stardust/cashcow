@@ -161,9 +161,9 @@ function LoggedInNavbar() {
         >
           <ul className="space-y-1.5">
             <li>
-              <a
+              <Link
                 className="flex items-center gap-x-3 py-2 px-2.5 bg-gray-700 text-sm text-white rounded-lg focus:outline-none focus:ring-1 focus:ring-gray-600"
-                href="#"
+                to='/dashboard'
               >
                 <svg
                   className="flex-shrink-0 w-4 h-4"
@@ -178,13 +178,13 @@ function LoggedInNavbar() {
                   <polyline points="9 22 9 12 15 12 15 22" />
                 </svg>
                 Dashboard
-              </a>
+              </Link>
             </li>
 
             <li>
-              <a
+              <Link
                 className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-400 rounded-lg hover:bg-gray-800 hover:text-white-300 focus:outline-none focus:ring-1 focus:ring-gray-600"
-                href="#"
+                to='/Expenses'
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -239,12 +239,12 @@ function LoggedInNavbar() {
                   />
                 </svg>
                 Expense Tracking
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-400 rounded-lg hover:bg-gray-800 hover:text-white-300 focus:outline-none focus:ring-1 focus:ring-gray-600"
-                href="#"
+                to='/EMI'
               >
                 <svg
                   className="flex-shrink-0 w-4 h-4"
@@ -270,12 +270,12 @@ function LoggedInNavbar() {
                   ></path>
                 </svg>
                 Loan Calculator
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-400 rounded-lg hover:bg-gray-800 hover:text-white-300 focus:outline-none focus:ring-1 focus:ring-gray-600"
-                href="#"
+                to='/Family'
               >
                 <svg
                   className="flex-shrink-0 w-4 h-4"
@@ -292,7 +292,7 @@ function LoggedInNavbar() {
                   <path d="M16 3.13a4 4 0 0 1 0 7.75" />
                 </svg>
                 Family Budgeting
-              </a>
+              </Link>
             </li>
             <li>
               <a
@@ -388,8 +388,8 @@ function LoggedInNavbar() {
                       Settings
                     </a>
                   </li>
-                  <li>
-                    <button onClick={logoutCall} className="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-400 rounded-lg hover:bg-gray-800 hover:text-white focus:outline-none focus:ring-1 focus:ring-gray-600">
+                  <li className="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-400 rounded-lg hover:bg-gray-800 hover:text-white focus:outline-none focus:ring-1 focus:ring-gray-600">
+                    <button onClick={logoutCall} className="">
                       Logout
                     </button>
                   </li>
