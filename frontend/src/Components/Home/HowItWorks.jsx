@@ -79,7 +79,8 @@ function HowItWorks() {
                       Colaborative Budgeting
                     </span>
                     <span className="block mt-1 text-gray-800 dark:hs-tab-active:text-gray-200 dark:text-gray-200">
-                      User can colaborate with their friends and family and can enjoy seemless Budgeting
+                    Elevate your finances with collaborative budgeting. Join forces with family, friends,
+                     or partners to set shared goals, track expenses, and achieve financial success together.
                     </span>
                   </span>
                 </span>
