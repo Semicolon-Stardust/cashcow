@@ -8,8 +8,8 @@ function About() {
             id: 0,
             name: "Aryan Gulati",
             image: "https://media.licdn.com/dms/image/D4D35AQEvnMryQnU6RA/profile-framedphoto-shrink_200_200/0/1650471128383?e=1706896800&v=beta&t=PqpNpPP8SqPlJJ1vlmNu_ozfkjDdUrDqo8pii-kOGrY",
-            position: "",
-            description: "I am an ambitious workaholic, but apart from that, pretty simple person.",
+            position: "Team Leader",
+            // description: "I am an ambitious workaholic, but apart from that, pretty simple person.",
             linkedin: "https://www.linkedin.com/in/vehehgito/",
             github: "https://github.com/vehehgito",
         },
@@ -17,7 +17,7 @@ function About() {
             id: 1,
             name: "Neelanjan Mukherji",
             image: "https://avatars.githubusercontent.com/u/58321614?v=4",
-            position: "",
+            position: "React Developer",
             description: "I am an ambitious workaholic, but apart from that, pretty simple person.",
             linkedin: "https://www.linkedin.com/in/neelanjan-mukherji/",
             github: "https://github.com/Maverick7274",
@@ -26,7 +26,7 @@ function About() {
             id: 2,
             name: "Muteen Nabi Kundangar",
             image: "https://media.licdn.com/dms/image/D4D35AQFagnSUV7ZtgQ/profile-framedphoto-shrink_200_200/0/1652689835622?e=1706896800&v=beta&t=xfIGX70dDiUXnyoZcYAn8gWKRe4T72F9BX316UBkhs4",
-            position: "",
+            position: "Backend Developer",
             description: "I am an ambitious workaholic, but apart from that, pretty simple person.",
             linkedin: "https://www.linkedin.com/in/muteen-nabi-kundangar-79a27a187/",
             github: "https://github.com/muteenk",
@@ -35,7 +35,7 @@ function About() {
             id: 2,
             name: "Rishit Jain",
             image: "https://media.licdn.com/dms/image/C4D03AQGP99HXASEEAQ/profile-displayphoto-shrink_200_200/0/1650382506341?e=1711584000&v=beta&t=wkUlD04RMFwe_jl2iDWZiU243elae8iM25y7dME2wrE",
-            position: "",
+            position: "Something",
             description: "I am an ambitious workaholic, but apart from that, pretty simple person.",
             linkedin: "https://www.linkedin.com/in/rishitjain48/",
             github: "https://github.com/Rishitjain4874",
@@ -60,9 +60,6 @@ function About() {
                     name={AboutDetail.name}
                     image={AboutDetail.image}
                     position={AboutDetail.position}
-                    description={AboutDetail.description}
-                    linkedin={AboutDetail.linkedin}
-                    github={AboutDetail.github}
                 />
             ))}
         </div>
