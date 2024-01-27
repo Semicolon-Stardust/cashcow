@@ -9,7 +9,7 @@ import axios from 'axios';
 Chart.register(CategoryScale);
 
 
-const ExpenditureChart = () => {
+const ExpenditureChart = ({transaction}) => {
 
     const { user } = useContext(UserContext);
 
@@ -53,52 +53,55 @@ const ExpenditureChart = () => {
       ]);
 
 
+      const fetchData = async () => {
+        let { data } = await axios.get("/transaction/chart");
+
+        let transactions = data.transaction;
+
+        // sort transactions by date
+        // transactions.sort((a, b) => {
+        //   return new Date(a.createdAt) - new Date(b.createdAt);
+        // });
+
+
+        let dataForCharts = Object.keys(data.transaction).reverse().map((key, index) => {
+          return {
+            id: index + 1,
+            date: `${new Date(key).getDate()} ${new Date(key).toLocaleString('default', { month: 'short' })}`,
+            MoneyOnDate: user.currentBalance + data.transaction[key],
+          };
+        })
+        
+        setChartData({
+          labels: dataForCharts.map((data) => data.date), 
+          datasets: [
+            {
+              label: "Amount at the end of the day",
+              data: dataForCharts.map((data) => data.MoneyOnDate),
+              backgroundColor: [
+                "#f70a0a",
+                "#f7c40a",
+                "#59f70a",
+                "#0af7a0",
+                "#0a69f7",
+                "#710af7",
+                "#f70ae4"
+              ],
+              borderColor: "black",
+              borderWidth: 2
+            }
+          ]
+        })
+      };
+
+
       useEffect(() => {
-        const fetchData = async () => {
-          let { data } = await axios.get("/transaction/chart");
-
-          let transactions = data.transaction;
-
-          // sort transactions by date
-          // transactions.sort((a, b) => {
-          //   return new Date(a.createdAt) - new Date(b.createdAt);
-          // });
-
-          console.log(transactions)
-
-          let dataForCharts = Object.keys(data.transaction).reverse().map((key, index) => {
-            return {
-              id: index + 1,
-              date: `${new Date(key).getDate()} ${new Date(key).toLocaleString('default', { month: 'short' })}`,
-              MoneyOnDate: user.currentBalance + data.transaction[key],
-            };
-          })
-
-          console.log(dataForCharts)
-          
-          setChartData({
-            labels: dataForCharts.map((data) => data.date), 
-            datasets: [
-              {
-                label: "Amount at the end of the day",
-                data: dataForCharts.map((data) => data.MoneyOnDate),
-                backgroundColor: [
-                  "#f70a0a",
-                  "#f7c40a",
-                  "#59f70a",
-                  "#0af7a0",
-                  "#0a69f7",
-                  "#710af7",
-                  "#f70ae4"
-                ],
-                borderColor: "black",
-                borderWidth: 2
-              }
-            ]
-          })
-        };
         fetchData();
       }, []);
+
+      useEffect(() => {
+        fetchData();
+      }, [transaction])
  
     const [chartData, setChartData] = useState({
         labels: Data.map((data) => data.date), 

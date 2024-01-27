@@ -2,6 +2,7 @@ import { useState, useEffect, useContext } from "react";
 import TransactionInputModal from "../Modals/TransactionInputModal";
 import { UserContext } from "../../context/UserContext";
 import axios from "axios";
+import toast from "react-hot-toast";
 
 function QuickExpenseTable({ transactions, setTransactions, balance}) {
 
@@ -32,18 +33,14 @@ function QuickExpenseTable({ transactions, setTransactions, balance}) {
     if (data.success === true) {
       setTransactions([data.transaction, ...transactions]);
       setUser(data.user);
-      setInput({
-        name: "",
-        amount: "",
-        createdAt: "",
-      });
+      toast.success("Transaction Added Successfully")
     }
     else {
-      console.log(data.message);
+      toast.error(data.message);
     }
 
   } catch (err) {
-    console.log(err);
+    toast.error(err.response.data.message)
   }
 
  
@@ -56,6 +53,22 @@ function QuickExpenseTable({ transactions, setTransactions, balance}) {
     };
     fetchData();
   }, [])
+
+  const deleteTransaction = async (id) => {
+    try {
+      const { data } = await axios.delete(`/transaction/${id}`);
+      if (data.success === true) {
+        toast.success("Transaction Deleted Successfully");
+        setTransactions(transactions.filter((transaction) => transaction._id !== id));
+        setUser(data.user);
+      }
+      else {
+        toast.error(data.message);
+      }
+    } catch (err) {
+      toast.error(err.response.data.message);
+    }
+  }
 
 
   return (
@@ -113,6 +126,12 @@ function QuickExpenseTable({ transactions, setTransactions, balance}) {
                     >
                       Payment Method
                     </th>
+                    <th
+                      scope="col"
+                      className="px-6 py-3 text-end text-xs font-medium text-gray-500 uppercase"
+                    >
+                      Action
+                    </th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
@@ -137,6 +156,9 @@ function QuickExpenseTable({ transactions, setTransactions, balance}) {
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                         {transaction.paymentMethod}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                      <button onClick={() => {deleteTransaction(transaction._id)}} className="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-red-500 hover:bg-red-100 hover:text-red-800 disabled:opacity-50 disabled:pointer-events-none dark:hover:bg-red-800/30 dark:hover:text-red-400 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">Delete</button>
                       </td>
                     </tr>
                   ))}

@@ -59,7 +59,7 @@ exports.updateTransaction = catchAsyncErrors( async (req, res, next) => {
 
 
 
-// Delete transaction => /api/v1/transaction/:id   -- ADMIN ONLY
+// Delete transaction => /api/v1/transaction/:id 
 exports.deleteTransaction = catchAsyncErrors(async (req, res, next) => {
 
     const transaction = await Transaction.findById(req.params.id);
@@ -68,11 +68,20 @@ exports.deleteTransaction = catchAsyncErrors(async (req, res, next) => {
         return next(new ErrorHandler("Transaction not found", 404));
     }
 
+    const allTransaction = await Transaction.find({user: req.user.id});
+
+    if (!allTransaction) {
+        return next(new ErrorHandler("Transaction not found", 404));
+    }
+
     await transaction.remove();
 
     res.status(200).json({
         success: true,
-        message: "Transaction is deleted"
+        message: "Transaction is deleted",
+        transactions: allTransaction,
+        user: req.user
+
     })
 })
 
