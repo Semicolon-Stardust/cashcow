@@ -12,15 +12,15 @@ const ApiFeatures = require('../utils/apiFeatures');
 exports.createTransaction = catchAsyncErrors(async (req, res, next) => {
 
         req.body.user = req.user.id;
-        const updatedBalance = req.user.currentBalance + req.body.amount;
+        const updatedBalance = Number(req.user.currentBalance) + Number(req.body.amount);
 
         if (updatedBalance < 0) {
             return next(new ErrorHandler("You don't have enough balance", 400));
         }
     
         const transaction = await Transaction.create(req.body);
-        const user = await User.findByIdAndUpdate(req.user.id, {currentBalance: updatedBalance});
-        user.currentBalance = updatedBalance;
+        const user = await User.findByIdAndUpdate(req.user.id, {currentBalance: Number(updatedBalance)});
+        user.currentBalance = Number(updatedBalance);
 
         res.status(201).json({
             success: true,

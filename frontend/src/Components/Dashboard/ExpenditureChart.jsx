@@ -60,9 +60,9 @@ const ExpenditureChart = () => {
           let transactions = data.transaction;
 
           // sort transactions by date
-          transactions.sort((a, b) => {
-            return new Date(a.createdAt) - new Date(b.createdAt);
-          });
+          // transactions.sort((a, b) => {
+          //   return new Date(a.createdAt) - new Date(b.createdAt);
+          // });
 
           console.log(transactions)
 
