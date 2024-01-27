@@ -30,7 +30,7 @@ const Dashboard = () => {
         null} */}
       <div className="flex justify-center items-center min-h-screen sm:flex-row flex-col">
         <div className="pt-10 px-4 sm:px-6 md:px-8 lg:ps-72 w-[50%] text-gray-800 dark:text-gray-200">
-          <ExpenditureChart />
+          <ExpenditureChart transaction={transactions} />
         </div>
         <div className="border-t sm:border-t-0 sm:border-s border-gray-200 dark:border-gray-700"></div>
         <div className="flex flex-col justify-center items-center gap-10">
@@ -41,6 +41,7 @@ const Dashboard = () => {
             <QuickFamilyTable />
           </div>
         </div>
+        
       </div>
     </div>
   );
