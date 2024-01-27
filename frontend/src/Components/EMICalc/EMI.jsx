@@ -73,7 +73,7 @@ export function EMI() {
 	return (
 		<div>
 			<div>
-				<LoggedInNavbar />
+				{/* <LoggedInNavbar /> */}
 			</div>
 			<div>
 				<div class="flex rounded-lg shadow-sm">
