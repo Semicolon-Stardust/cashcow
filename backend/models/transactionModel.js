@@ -15,7 +15,6 @@ const transactionSchema = new mongoose.Schema({
     },
     category: {
         type: String,
-        required: [true, "Please select category for this transaction"],
     },
     user:{
         type: mongoose.Schema.ObjectId,

@@ -217,8 +217,6 @@ exports.updateUserProfile = catchAsyncErrors(async (req, res, next) => {
 
 
 
-// U
-
 
 
 
