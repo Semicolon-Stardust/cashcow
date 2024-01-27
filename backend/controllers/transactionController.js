@@ -164,11 +164,7 @@ exports.getAllTransactions = catchAsyncErrors(async (req, res) => {
 
     const transactionCount = await Transaction.countDocuments();
     
-    const apiFeature = new ApiFeatures(Transaction.find(), req.query)
-    .search()
-    .filter();
-    // .pagination(resultPerPage);
-    const transactions = await apiFeature.query;
+    const transactions = await Transaction.find({user: req.user.id}).sort({createdAt: -1});
 
     res.status(201).json({
         success: true,
