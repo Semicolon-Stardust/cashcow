@@ -35,7 +35,7 @@ const Dashboard = () => {
         <div className="border-t sm:border-t-0 sm:border-s border-gray-200 dark:border-gray-700"></div>
         <div className="flex flex-col justify-center items-center gap-10">
           <div className="flex flex-col gap-5 justify-center items-center">
-            <QuickExpenseTable transactions={transactions} setTransactions={setTransactions} />
+            <QuickExpenseTable transactions={transactions} setTransactions={setTransactions} balance={user.currentBalance} />
           </div>
           <div className="flex flex-col gap-5 justify-center items-center">
             <QuickFamilyTable />

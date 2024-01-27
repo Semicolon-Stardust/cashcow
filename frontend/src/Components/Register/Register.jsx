@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import Personal from "./Personal";
 import Professional from "./Professional";
 import Credentials from "./Credentials";
-import Review from "./Review";
 import { UserContext } from "../../context/UserContext";
 import axios from "axios";
 import Input from "../Utilities/Input";
@@ -81,11 +80,6 @@ function Register() {
       id: 3,
       name: "Credentials",
       component: <Credentials input={input} handleChange={handleChange} />,
-    },
-    {
-      id: 4,
-      name: "Review",
-      component: <Review input={input} handleChange={handleChange} />,
     },
   ];
   const nextStep = () => {
