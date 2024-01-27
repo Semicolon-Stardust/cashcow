@@ -161,8 +161,7 @@ function Register() {
                   {step.name}
                 </h1>
                 <p className="dark:text-white">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Quisquam
+                  Fill in all the details to create an account
                 </p>
               </div>
             );
