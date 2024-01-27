@@ -111,7 +111,7 @@ function Register() {
                 Register
               </h1>
               <p className="text-gray-600 dark:text-gray-400">
-              Follow the stepper and register your account.
+               Click on register to create an account
               </p>
             </div>
           </div>
