@@ -1,8 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import TransactionInputModal from "../Modals/TransactionInputModal";
+import { UserContext } from "../../context/UserContext";
 import axios from "axios";
 
 function QuickExpenseTable({ transactions, setTransactions, balance}) {
+
+  const { user, setUser } = useContext(UserContext);
   
   const [input, setInput] = useState({
     name: "",
@@ -13,11 +16,37 @@ function QuickExpenseTable({ transactions, setTransactions, balance}) {
   const [paymentMethod, setPaymentMethod] = useState("UPI");
   const [transactionType, setTransactionType] = useState("Credit");
 
-  const submitHandler = (e) => {
+  const submitHandler = async (e) => {
     e.preventDefault();
-    console.log(input);
-    console.log(paymentMethod);
-    console.log(transactionType);
+
+    try {
+    const amount = transactionType === "Credit" ? input.amount : -input.amount;
+
+    const { data } = await axios.post("/transaction/new", {
+      name: input.name,
+      amount: amount,
+      createdAt: input.createdAt,
+      paymentMethod,
+    });
+
+    if (data.success === true) {
+      setTransactions([data.transaction, ...transactions]);
+      setUser(data.user);
+      setInput({
+        name: "",
+        amount: "",
+        createdAt: "",
+      });
+    }
+    else {
+      console.log(data.message);
+    }
+
+  } catch (err) {
+    console.log(err);
+  }
+
+ 
   }
 
   useEffect(() => {

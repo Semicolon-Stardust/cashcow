@@ -112,10 +112,14 @@ function TransactionInputModal(props) {
                         <div className="flex">
                           <input
                             type="radio"
-                            name="hs-radio-group"
                             className="shrink-0 mt-0.5 border-gray-200 rounded-full text-blue-600 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"
                             id="hs-radio-group-1"
-                            checked
+                            name="paymentMethod"
+                            value="UPI"
+                            checked={props.paymentMethod === "UPI"}
+                            onChange={(e) => {
+                              props.setPaymentMethod(e.target.value)
+                            }}
                           />
                           <label
                             htmlFor="hs-radio-group-1"
@@ -128,9 +132,14 @@ function TransactionInputModal(props) {
                         <div className="flex">
                           <input
                             type="radio"
-                            name="hs-radio-group"
+                            name="paymentMethod"
                             className="shrink-0 mt-0.5 border-gray-200 rounded-full text-blue-600 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"
                             id="hs-radio-group-2"
+                            value="NetBanking"
+                            checked={props.paymentMethod === "NetBanking"}
+                            onChange={(e) => {
+                              props.setPaymentMethod(e.target.value)
+                            }}
                           />
                           <label
                             for="hs-radio-group-2"
@@ -143,9 +152,14 @@ function TransactionInputModal(props) {
                         <div className="flex">
                           <input
                             type="radio"
-                            name="hs-radio-group"
+                            name="paymentMethod"
                             className="shrink-0 mt-0.5 border-gray-200 rounded-full text-blue-600 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"
                             id="hs-radio-group-3"
+                            value="Cash"
+                            checked={props.paymentMethod === "Cash"}
+                            onChange={(e) => {
+                              props.setPaymentMethod(e.target.value)
+                            }}
                           />
                           <label
                             for="hs-radio-group-3"
@@ -158,9 +172,14 @@ function TransactionInputModal(props) {
                         <div className="flex">
                           <input
                             type="radio"
-                            name="hs-radio-group"
+                            name="paymentMethod"
                             className="shrink-0 mt-0.5 border-gray-200 rounded-full text-blue-600 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"
                             id="hs-radio-group-3"
+                            value="Credit Card"
+                            checked={props.paymentMethod === "Credit Card"}
+                            onChange={(e) => {
+                              props.setPaymentMethod(e.target.value)
+                            }}
                           />
                           <label
                             for="hs-radio-group-3"
@@ -173,9 +192,14 @@ function TransactionInputModal(props) {
                         <div className="flex">
                           <input
                             type="radio"
-                            name="hs-radio-group"
+                            name="paymentMethod"
                             className="shrink-0 mt-0.5 border-gray-200 rounded-full text-blue-600 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"
                             id="hs-radio-group-3"
+                            value="Debit Card"
+                            checked={props.paymentMethod === "Debit Card"}
+                            onChange={(e) => {
+                              props.setPaymentMethod(e.target.value)
+                            }}
                           />
                           <label
                             for="hs-radio-group-3"
@@ -200,12 +224,17 @@ function TransactionInputModal(props) {
                     <div className="flex">
                           <input
                             type="radio"
-                            name="hs-radio-group"
+                            name="transactionType"
                             className="shrink-0 mt-0.5 border-gray-200 rounded-full text-blue-600 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"
-                            id="hs-radio-group-3"
+                            id="hs-radio-group-"
+                            value="Credit"
+                            checked={props.transactionType === "Credit"}
+                            onChange={(e) => {
+                              props.setTransactionType(e.target.value)
+                            }}
                           />
                           <label
-                            for="hs-radio-group-3"
+                            for="hs-radio-group-"
                             className="text-sm text-gray-500 ms-2 dark:text-gray-400"
                           >
                             Credit
@@ -215,12 +244,17 @@ function TransactionInputModal(props) {
                         <div className="flex">
                           <input
                             type="radio"
-                            name="hs-radio-group"
+                            name="transactionType"
                             className="shrink-0 mt-0.5 border-gray-200 rounded-full text-blue-600 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"
-                            id="hs-radio-group-3"
+                            id="hs-radio-group-"
+                            value="Debit"
+                            checked={props.transactionType === "Debit"}
+                            onChange={(e) => {
+                              props.setTransactionType(e.target.value)
+                            }}
                           />
                           <label
-                            for="hs-radio-group-3"
+                            for="hs-radio-group-"
                             className="text-sm text-gray-500 ms-2 dark:text-gray-400"
                           >
                             Debit
