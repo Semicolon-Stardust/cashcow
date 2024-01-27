@@ -99,23 +99,30 @@ exports.getSingleTransaction = catchAsyncErrors(async (req, res, next) => {
 
 
 exports.getChartData = catchAsyncErrors(async (req, res, next) => {
-    
-        // const apiFeature = new ApiFeatures(Transaction.find(), req.query)
-        // .search()
-        // .filter();
-        // // .pagination(resultPerPage);
-        // const transactions = await apiFeature.query;
 
         // date last week
         const lastWeek = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
 
         // get weekly data of each day
         let transactions = await Transaction.find({
-            createdAt: {
+            $and: [
+              { user: req.user.id },
+              {createdAt: {
                 $gte: lastWeek,
                 $lte: new Date()
-            }
+                }}
+            ]
         });
+
+        {
+            $and: [
+              { user: req.user.id },
+              {createdAt: {
+                $gte: lastWeek,
+                $lte: new Date()
+                }}
+            ]
+        }
 
         
 
@@ -157,11 +164,7 @@ exports.getAllTransactions = catchAsyncErrors(async (req, res) => {
 
     const transactionCount = await Transaction.countDocuments();
     
-    const apiFeature = new ApiFeatures(Transaction.find(), req.query)
-    .search()
-    .filter();
-    // .pagination(resultPerPage);
-    const transactions = await apiFeature.query;
+    const transactions = await Transaction.find({user: req.user.id}).sort({createdAt: -1});
 
     res.status(201).json({
         success: true,

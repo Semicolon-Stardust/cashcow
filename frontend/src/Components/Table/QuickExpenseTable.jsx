@@ -1,32 +1,18 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import TransactionInputModal from "../Modals/TransactionInputModal";
+import axios from "axios";
 
-function QuickExpenseTable() {
+function QuickExpenseTable({ transactions, setTransactions}) {
   const [tableData, setTableData] = useState();
 
-  const transactionData = [
-    {
-      id: 1,
-      name: "Groceries",
-      amount: "₹ 1000.00",
-      date: "12/12/2021",
-      paymentMethod: "Cash",
-    },
-    {
-      id: 2,
-      name: "Groceries",
-      amount: "₹ 1000.00",
-      date: "12/12/2021",
-      paymentMethod: "Cash",
-    },
-    {
-      id: 3,
-      name: "Groceries",
-      amount: "₹ 1000.00",
-      date: "12/12/2021",
-      paymentMethod: "Cash",
-    },
-  ];
+  useEffect(() => {
+    const fetchData = async () => {
+      let { data } = await axios.get("/transaction/transactions/");
+      setTransactions(data.transaction);
+    };
+    fetchData();
+  }, [])
+
 
   return (
     <div>
@@ -55,6 +41,7 @@ function QuickExpenseTable() {
               </button>
             </div>
             <div className="border overflow-hidden dark:border-gray-700">
+              { transactions.length === 0 ? null : 
               <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
                 <thead>
                   <tr>
@@ -85,7 +72,7 @@ function QuickExpenseTable() {
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
-                  {transactionData.map((transaction) => (
+                  {transactions.map((transaction) => (
                     <tr key={transaction.id}>
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="flex items-center">
@@ -101,7 +88,7 @@ function QuickExpenseTable() {
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="text-sm text-gray-500">
-                          {transaction.date}
+                          {`${new Date(transaction.createdAt).getDate()} ${new Date(transaction.createdAt).toLocaleString('default', { month: 'short' })} ${new Date(transaction.createdAt).getFullYear()}`}
                         </div>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
@@ -111,6 +98,7 @@ function QuickExpenseTable() {
                   ))}
                 </tbody>
               </table>
+        }
             </div>
           </div>
         </div>
