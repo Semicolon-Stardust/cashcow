@@ -2,8 +2,23 @@ import { useState, useEffect } from "react";
 import TransactionInputModal from "../Modals/TransactionInputModal";
 import axios from "axios";
 
-function QuickExpenseTable({ transactions, setTransactions}) {
-  const [tableData, setTableData] = useState();
+function QuickExpenseTable({ transactions, setTransactions, balance}) {
+  
+  const [input, setInput] = useState({
+    name: "",
+    amount: "",
+    createdAt: "",
+  });
+
+  const [paymentMethod, setPaymentMethod] = useState("UPI");
+  const [transactionType, setTransactionType] = useState("Credit");
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    console.log(input);
+    console.log(paymentMethod);
+    console.log(transactionType);
+  }
 
   useEffect(() => {
     const fetchData = async () => {
@@ -21,7 +36,7 @@ function QuickExpenseTable({ transactions, setTransactions}) {
           <div className="p-1.5 min-w-full inline-block align-middle">
             <div className="my-4 flex justify-between items-center">
               <h1 className="text-2xl text-gray-800 dark:text-gray-200">
-                Total Balance: <span className="text-red-500">₹ 0.00</span>
+                Total Balance: <span className="text-red-500">₹ {balance}</span>
               </h1>
               <button className="flex items-center justify-center py-3 px-4 gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" data-hs-overlay="#transactions">
                 Add Transaction
@@ -72,8 +87,8 @@ function QuickExpenseTable({ transactions, setTransactions}) {
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
-                  {transactions.map((transaction) => (
-                    <tr key={transaction.id}>
+                  {transactions.slice(0, 3).map((transaction, index) => (
+                    <tr key={index}>
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="flex items-center">
                           <div className="text-sm font-medium text-gray-500">
@@ -103,7 +118,7 @@ function QuickExpenseTable({ transactions, setTransactions}) {
           </div>
         </div>
       </div>
-      <TransactionInputModal />
+      <TransactionInputModal input={input} setInput={setInput} paymentMethod={paymentMethod} setPaymentMethod={setPaymentMethod} transactionType={transactionType} setTransactionType={setTransactionType} submitHandler={submitHandler} />
     </div>
   );
 }

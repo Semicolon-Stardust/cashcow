@@ -2,28 +2,14 @@ import {useState} from "react";
 
 function TransactionInputModal(props) {
 
-  const [input, setInput] = useState({
-    name: "",
-    amount: "",
-    date: "",
-    paymentMethod: "",
-    transactionType: "",
-  });
+  
 
   const handleChange = (e) => {
-    setInput({...input, [e.target.name]: e.target.value});
+    props.setInput({...props.input, [e.target.name]: e.target.value});
   };
 
-  const submitHandler = (e) => {
-    e.preventDefault();
-    console.log(input);
-  }
-
-  const name = props.name;
-  const amount = props.amount;
-  const date = props.date;
-  const paymentMethod = props.paymentMethod;
-  const transactionType = props.transactionType;
+  
+  
   return (
     <div>
       <div
@@ -57,7 +43,7 @@ function TransactionInputModal(props) {
               </button>
             </div>
 
-            <form>
+            <form onSubmit={props.submitHandler}>
               <div className="mb-[9rem]">
                 <div className="px-4 py-3">
                   <div className="relative">
@@ -68,8 +54,8 @@ function TransactionInputModal(props) {
                       Transaction Name
                     </label>
                     <input
-                      value={name}
-                      name="transactionName"
+                      value={props.name}
+                      name="name"
                       type="text"
                       className="peer py-3 px-4 block w-full bg-gray-100 border-transparent rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-gray-700 dark:border-transparent dark:text-gray-400 dark:focus:ring-gray-600"
                       placeholder="Type here..."
@@ -86,8 +72,8 @@ function TransactionInputModal(props) {
                       Transaction Amount
                     </label>
                     <input
-                      value={amount}
-                      name="transactionAmount"
+                      value={props.amount}
+                      name="amount"
                       type="text"
                       className="peer py-3 px-4 block w-full bg-gray-100 border-transparent rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-gray-700 dark:border-transparent dark:text-gray-400 dark:focus:ring-gray-600"
                       placeholder="Type here..."
@@ -104,8 +90,8 @@ function TransactionInputModal(props) {
                       Transaction Date
                     </label>
                     <input
-                      value={date}
-                      name="transactionDate"
+                      value={props.createdAt}
+                      name="createdAt"
                       type="date"
                       className="peer py-3 px-4 block w-full bg-gray-100 border-transparent rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-gray-700 dark:border-transparent dark:text-gray-400 dark:focus:ring-gray-600"
                       placeholder="DD/MM/YYYY"
@@ -123,9 +109,11 @@ function TransactionInputModal(props) {
                     </label>
                     <div className="relative">
                       <select
-                        value={paymentMethod}
+                        value={props.paymentMethod}
                         name="paymentMethod"
-                        onChange={handleChange}
+                        onChange={(e) => {
+                          setPaymentMethod(e.target.value);
+                        }}
                         data-hs-select='{
       "placeholder": "Select option...",
       "toggleTag": "<button type=\"button\"></button>",
@@ -172,9 +160,11 @@ function TransactionInputModal(props) {
                     </label>
                     <div className="relative">
                       <select
-                        value={transactionType}
+                        value={props.transactionType}
                         name="transactionType"
-                        onChange={handleChange}
+                        onChange={(e) => {
+                          setTransactionType(e.target.value);
+                        }}
                         data-hs-select='{
       "placeholder": "Select option...",
       "toggleTag": "<button type=\"button\"></button>",
@@ -211,7 +201,7 @@ function TransactionInputModal(props) {
               </div>
 
               <div className="flex justify-end items-center gap-x-2 py-3 px-4 border-t dark:border-gray-700">
-                <button onClick={submitHandler} type="submit" className="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
+                <button type="submit" className="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
                   Add Transaction
                   <svg
                     className="flex-shrink-0 w-4 h-4"
