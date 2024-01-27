@@ -81,11 +81,6 @@ function Register() {
       name: "Credentials",
       component: <Credentials input={input} handleChange={handleChange} />,
     },
-    {
-      id: 4,
-      name: "Review",
-      component: <Review input={input} handleChange={handleChange} />,
-    },
   ];
   const nextStep = () => {
     setCurrentStep(currentStep + 1);
