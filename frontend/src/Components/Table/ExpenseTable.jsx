@@ -1,11 +1,11 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext } from 'react'
 import TransactionInputModal from "../Modals/TransactionInputModal";
 import { UserContext } from "../../context/UserContext";
 import axios from "axios";
 
-function QuickExpenseTable({ transactions, setTransactions, balance}) {
+function ExpenseTable({ transactions, setTransactions, balance}) {
 
-  const { user, setUser } = useContext(UserContext);
+    const { user, setUser } = useContext(UserContext);
   
   const [input, setInput] = useState({
     name: "",
@@ -60,6 +60,7 @@ function QuickExpenseTable({ transactions, setTransactions, balance}) {
 
   return (
     <div>
+        <div>
       <div className="flex flex-col">
         <div className="-m-1.5 overflow-x-auto">
           <div className="p-1.5 min-w-full inline-block align-middle">
@@ -149,7 +150,8 @@ function QuickExpenseTable({ transactions, setTransactions, balance}) {
       </div>
       <TransactionInputModal input={input} setInput={setInput} paymentMethod={paymentMethod} setPaymentMethod={setPaymentMethod} transactionType={transactionType} setTransactionType={setTransactionType} submitHandler={submitHandler} />
     </div>
-  );
+    </div>
+  )
 }
 
-export default QuickExpenseTable;
+export default ExpenseTable

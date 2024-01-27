@@ -1,6 +1,7 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useState, useContext} from 'react'
 import Chart from "chart.js/auto";
 import { CategoryScale } from "chart.js";
+import { UserContext } from '../../context/UserContext';
 
 import { Line } from 'react-chartjs-2';
 import axios from 'axios';
@@ -9,6 +10,8 @@ Chart.register(CategoryScale);
 
 
 const ExpenditureChart = () => {
+
+    const { user } = useContext(UserContext);
 
     const [Data, setData] = useState([
         {
@@ -54,13 +57,24 @@ const ExpenditureChart = () => {
         const fetchData = async () => {
           let { data } = await axios.get("/transaction/chart");
 
+          let transactions = data.transaction;
+
+          // sort transactions by date
+          // transactions.sort((a, b) => {
+          //   return new Date(a.createdAt) - new Date(b.createdAt);
+          // });
+
+          console.log(transactions)
+
           let dataForCharts = Object.keys(data.transaction).reverse().map((key, index) => {
             return {
               id: index + 1,
               date: `${new Date(key).getDate()} ${new Date(key).toLocaleString('default', { month: 'short' })}`,
-              MoneyOnDate: data.transaction[key],
+              MoneyOnDate: user.currentBalance + data.transaction[key],
             };
           })
+
+          console.log(dataForCharts)
           
           setChartData({
             labels: dataForCharts.map((data) => data.date), 
