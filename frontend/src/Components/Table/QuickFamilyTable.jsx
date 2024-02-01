@@ -1,32 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import FamilyInputModal from '../Modals/FamilyInputModal'
 
 function QuickFamilyTable() {
 
-    const familyData = [
+    const [familyData, setFamilyData] = useState([]);
 
-        {
-            id: 1,
-            name: "Rajesh",
-            amount: "₹ 1000.00",
-            date: "1 Jan",
-            paymentMethod: "UPI",
-            },
-            {
-            id: 2,
-            name: "Suresh",
-            amount: "₹ 1000.00",
-            date: "1 Jan",
-            paymentMethod: "UPI",
-            },
-            {
-            id: 3,
-            name: "Narmesh",
-            amount: "₹ 1000.00",
-            date: "1 Jan",
-            paymentMethod: "UPI",
-            },
-    ]
   return (
     <div>
 
@@ -55,6 +33,7 @@ function QuickFamilyTable() {
               </button>
             </div>
             <div className="border overflow-hidden dark:border-gray-700">
+              {familyData.length > 0 ? 
               <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
                 <thead>
                   <tr>
@@ -111,6 +90,7 @@ function QuickFamilyTable() {
                   ))}
                 </tbody>
               </table>
+              : null }
             </div>
           </div>
         </div>

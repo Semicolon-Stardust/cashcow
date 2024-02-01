@@ -8,6 +8,10 @@ const familySchema = new mongoose.Schema({
     description: {
         type: String,
     },
+    currentBalance: {
+        type: Number,
+        default: 0,
+    },
     members: {
         type: Array,
         default: [],
